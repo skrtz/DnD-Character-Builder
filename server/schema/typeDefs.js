@@ -13,6 +13,7 @@ const typeDefs = gql`
         characterId: ID!
         name: String!
         race: String
+        image: String
         class: String
         background: String
     }
