@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/skrtz/DnD-Character-Builder/issues"
   },
-  "homepage": "https://github.com/skrtz/DnD-Character-Builder#readme"
+  "homepage": "https://github.com/skrtz/DnD-Character-Builder#readme",
+  "dependencies": {
+    "concurrently": "^6.2.0"
+  }
 }
