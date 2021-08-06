@@ -36,21 +36,33 @@ const resolvers = {
       return { token, user };
     },
 
+    addCharacter: async (parent, { characterData }, context) => {
+      
+      if (context.user) {
+        const updatedUser = await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          { $push: { characterList: characterData } },
+          { new: true }
+        );
+        return updatedUser;
+      }
+      throw new AuthenticationError("You need to be logged in");
+    },
 
-
-    // deleteCharacter: async (parent, { characterId }, context) => {
-    //   if (context.user) {
-    //     const character = await Characters.findOneAndDelete({
-    //       _id: characterId,
-    //       createdBy: context.user.username
-    //     });
     
-    //     await User.findOneAndUpdate(
-    //       { _id: context.user._id},
-    //       { $pull: { character: character._id}}
-    //     )
-    //   }
-    // }
+    deleteCharacter: async (parent, { characterId }, context) => {
+      if (context.user) {
+        const character = await Characters.findOneAndDelete({
+          _id: characterId,
+          createdBy: context.user.username
+        });
+    
+        await User.findOneAndUpdate(
+          { _id: context.user._id},
+          { $pull: { character: character._id}}
+        )
+      }
+    }
   },
 };
 
@@ -60,4 +72,3 @@ module.exports = resolvers;
 
 //addCharacter
 // updateCharacter
-
