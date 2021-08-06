@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User } = require("../models");
+const { User, Characters } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
@@ -25,6 +25,7 @@ const resolvers = {
 
       return { token, user };
     },
+
     login: async (parent, { email, username, password }) => {
       const user = await User.findOne({ email });
 
@@ -34,13 +35,27 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+
+    // deleteCharacter: async (parent, { characterId }, context) => {
+    //   if (context.user) {
+    //     const character = await Characters.findOneAndDelete({
+    //       _id: characterId,
+    //       createdBy: context.user.username
+    //     });
+    
+    //     await User.findOneAndUpdate(
+    //       { _id: context.user._id},
+    //       { $pull: { character: character._id}}
+    //     )
+    //   }
+    // }
   },
 };
 
+
+
 module.exports = resolvers;
 
-// addCharacter
-// deleteCharacter
+//addCharacter
 // updateCharacter
-// addUser
-// login
+
