@@ -38,6 +38,12 @@ const authLink = setContext((_, { headers }) => {
 
   function App() {
       return (
-          
+        <ApolloClient client={client}>
+            <Router>
+                <div className="flex-column justify-flex-start min-100-vh">
+                    <Login />
+                </div>
+            </Router>
+        </ApolloClient>
       )
   }
