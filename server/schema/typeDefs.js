@@ -24,7 +24,7 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
-    characterList: [Character]
+    characterList: [Character!]
   }
 
   type Auth {
@@ -41,6 +41,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     deleteCharacter(characterId: String): User
     addCharacter(characterData: characterInput): User
+    updateCharacter(characterData: characterInput): User
   }
 `;
 

@@ -16,6 +16,13 @@ const resolvers = {
 
       throw new AuthenticationError("Not logged in");
     },
+
+    character: async (parent, args, context) => {
+      if(context.user){
+        const characterData = await Characters.findOne({})
+      }
+      
+    }
   },
 
   Mutation: {
@@ -57,6 +64,19 @@ const resolvers = {
           createdBy: context.user.username
         });
     
+        await User.findOneAndUpdate(
+          { _id: context.user._id},
+          { $pull: { character: character._id}}
+        )
+      }
+    },
+
+    updateCharacter: async (parent, { characterId }, context) => {
+      if (context.user) {
+        const character = Characters.findOneAndUpdate({
+          _id: characterId,
+          createdBy: context.user.username
+        });
         await User.findOneAndUpdate(
           { _id: context.user._id},
           { $pull: { character: character._id}}
