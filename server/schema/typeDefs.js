@@ -34,8 +34,8 @@ const typeDefs = gql`
 
   type Query {
     me: User
-    character: Character
-    userCharacters: characterList
+    # character: Character
+    # userCharacters: characterList
   }
 
   type Mutation {
@@ -43,7 +43,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     deleteCharacter(characterId: String): User
     addCharacter(characterData: characterInput): User
-    updateCharacter(characterData: characterInput): User
+    # updateCharacter(characterData: characterInput): User
   }
 `;
 

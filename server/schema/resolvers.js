@@ -1,6 +1,8 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User } = require("../models");
+const { User, characterSchema } = require("../models");
 const { signToken } = require("../utils/auth");
+
+const Character = characterSchema
 
 const resolvers = {
   Query: {
@@ -17,24 +19,24 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
 
-    character: async (parent, args, context) => {
-      if (context.character) {
-        const characterData = await Characters.findOne({
-          characterId: context.character.characterId,
-        });
+    // character: async (parent, args, context) => {
+    //   if (context.character) {
+    //     const characterData = await Characters.findOne({
+    //       characterId: context.character.characterId,
+    //     });
 
-        return characterData
-      }
-      throw console.error('No character by this name');
-    },
+    //     return characterData
+    //   }
+    //   throw console.error('No character by this name');
+    // },
 
-    userCharacters: async (parent, args, context) => {
-      if (context.user) {
-        const userData = await User.findOne({ _id: context.user._id })
-        const characterData = user.characterList
-      }
-      return characterData
-    }
+  //   userCharacters: async (parent, args, context) => {
+  //     if (context.user) {
+  //       const userData = await User.findOne({ _id: context.user._id })
+  //       const characterData = user.characterList
+  //     }
+  //     return characterData
+  //   }
     
   },
 
@@ -82,18 +84,18 @@ const resolvers = {
       }
     },
 
-    updateCharacter: async (parent, { characterId }, context) => {
-      if (context.user) {
-        const character = Characters.findOneAndUpdate({
-          _id: characterId,
-          createdBy: context.user.username,
-        });
-        await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $pull: { character: character._id } }
-        );
-      }
-    },
+    // updateCharacter: async (parent, { characterId }, context) => {
+    //   if (context.user) {
+    //     const character = Characters.findOneAndUpdate({
+    //       _id: characterId,
+    //       createdBy: context.user.username,
+    //     });
+    //     await User.findOneAndUpdate(
+    //       { _id: context.user._id },
+    //       { $pull: { character: character._id } }
+    //     );
+    //   }
+    // },
   },
 };
 
