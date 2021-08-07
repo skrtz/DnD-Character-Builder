@@ -11,7 +11,7 @@ const characterSchema = new Schema({
     type: String,
     required: true,
   },
-  // saved book id from GoogleBooks
+  
   characterId: {
     type: String,
     required: true,
