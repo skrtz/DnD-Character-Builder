@@ -1,5 +1,7 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, characterSchema } = require("../models");
+
+const { User } = require("../models");
+
 const { signToken } = require("../utils/auth");
 
 const Character = characterSchema
@@ -19,6 +21,7 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
 
+
     // character: async (parent, args, context) => {
     //   if (context.character) {
     //     const characterData = await Characters.findOne({
@@ -37,6 +40,7 @@ const resolvers = {
   //     }
   //     return characterData
   //   }
+
     
   },
 
@@ -76,7 +80,9 @@ const resolvers = {
         const character = await Characters.findOneAndDelete({
           _id: characterId,
           createdBy: context.user.username,
+
         });
+
 
         await User.findOneAndUpdate(
           { _id: context.user._id },
@@ -84,6 +90,7 @@ const resolvers = {
         );
       }
     },
+
 
     // updateCharacter: async (parent, { characterId }, context) => {
     //   if (context.user) {
@@ -97,6 +104,8 @@ const resolvers = {
     //     );
     //   }
     // },
+
+
   },
 };
 
