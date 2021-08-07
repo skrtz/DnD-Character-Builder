@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Characters } = require("../models");
+const { User } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
@@ -18,11 +18,24 @@ const resolvers = {
     },
 
     character: async (parent, args, context) => {
-      if(context.user){
-        const characterData = await Characters.findOne({})
+      if (context.character) {
+        const characterData = await Characters.findOne({
+          characterId: context.character.characterId,
+        });
+
+        return characterData
       }
-      
+      throw console.error('No character by this name');
+    },
+
+    userCharacters: async (parent, args, context) => {
+      if (context.user) {
+        const userData = await User.findOne({ _id: context.user._id })
+        const characterData = user.characterList
+      }
+      return characterData
     }
+    
   },
 
   Mutation: {
@@ -44,7 +57,6 @@ const resolvers = {
     },
 
     addCharacter: async (parent, { characterData }, context) => {
-      
       if (context.user) {
         const updatedUser = await User.findByIdAndUpdate(
           { _id: context.user._id },
@@ -56,18 +68,17 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in");
     },
 
-    
     deleteCharacter: async (parent, { characterId }, context) => {
       if (context.user) {
         const character = await Characters.findOneAndDelete({
           _id: characterId,
-          createdBy: context.user.username
+          createdBy: context.user.username,
         });
-    
+
         await User.findOneAndUpdate(
-          { _id: context.user._id},
-          { $pull: { character: character._id}}
-        )
+          { _id: context.user._id },
+          { $pull: { character: character._id } }
+        );
       }
     },
 
@@ -75,18 +86,16 @@ const resolvers = {
       if (context.user) {
         const character = Characters.findOneAndUpdate({
           _id: characterId,
-          createdBy: context.user.username
+          createdBy: context.user.username,
         });
         await User.findOneAndUpdate(
-          { _id: context.user._id},
-          { $pull: { character: character._id}}
-        )
+          { _id: context.user._id },
+          { $pull: { character: character._id } }
+        );
       }
-    }
+    },
   },
 };
-
-
 
 module.exports = resolvers;
 
