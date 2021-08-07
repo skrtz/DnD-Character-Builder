@@ -1,6 +1,10 @@
 const { AuthenticationError } = require("apollo-server-express");
+
 const { User } = require("../models");
+
 const { signToken } = require("../utils/auth");
+
+const Character = characterSchema
 
 const resolvers = {
   Query: {
@@ -17,6 +21,10 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5bb95383a474dc93b7bf876bf3e761fa813feb5f
     // character: async (parent, args, context) => {
     //   if (context.character) {
     //     const characterData = await Characters.findOne({
@@ -35,6 +43,10 @@ const resolvers = {
   //     }
   //     return characterData
   //   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5bb95383a474dc93b7bf876bf3e761fa813feb5f
     
   // },
 
@@ -73,7 +85,9 @@ const resolvers = {
         const character = await Characters.findOneAndDelete({
           _id: characterId,
           createdBy: context.user.username,
+
         });
+
 
         await User.findOneAndUpdate(
           { _id: context.user._id },
@@ -82,18 +96,21 @@ const resolvers = {
       }
     },
 
-    updateCharacter: async (parent, { characterId }, context) => {
-      if (context.user) {
-        const character = Characters.findOneAndUpdate({
-          _id: characterId,
-          createdBy: context.user.username,
-        });
-        await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $pull: { character: character._id } }
-        );
-      }
-    },
+
+    // updateCharacter: async (parent, { characterId }, context) => {
+    //   if (context.user) {
+    //     const character = Characters.findOneAndUpdate({
+    //       _id: characterId,
+    //       createdBy: context.user.username,
+    //     });
+    //     await User.findOneAndUpdate(
+    //       { _id: context.user._id },
+    //       { $pull: { character: character._id } }
+    //     );
+    //   }
+    // },
+
+
   },
 }
 
