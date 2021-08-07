@@ -4,8 +4,6 @@ const { User } = require("../models");
 
 const { signToken } = require("../utils/auth");
 
-const Character = characterSchema
-
 const resolvers = {
   Query: {
     me: async (parent, args, context) => {
@@ -20,11 +18,8 @@ const resolvers = {
 
       throw new AuthenticationError("Not logged in");
     },
+  },
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 5bb95383a474dc93b7bf876bf3e761fa813feb5f
     // character: async (parent, args, context) => {
     //   if (context.character) {
     //     const characterData = await Characters.findOne({
@@ -43,10 +38,6 @@ const resolvers = {
   //     }
   //     return characterData
   //   }
-<<<<<<< HEAD
-=======
-
->>>>>>> 5bb95383a474dc93b7bf876bf3e761fa813feb5f
     
   // },
 
@@ -113,5 +104,4 @@ const resolvers = {
 
   },
 }
-
 module.exports = resolvers;

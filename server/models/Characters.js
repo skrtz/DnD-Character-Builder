@@ -34,11 +34,4 @@ const characterSchema = new Schema({
 
 // const Character = model('Character', characterSchema);
 
-<<<<<<< HEAD
 module.exports = { characterSchema } 
-=======
-
-module.exports = { characterSchema } 
-
-
->>>>>>> 5bb95383a474dc93b7bf876bf3e761fa813feb5f
