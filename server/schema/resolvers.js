@@ -17,26 +17,26 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
 
-    character: async (parent, args, context) => {
-      if (context.character) {
-        const characterData = await Characters.findOne({
-          characterId: context.character.characterId,
-        });
+    // character: async (parent, args, context) => {
+    //   if (context.character) {
+    //     const characterData = await Characters.findOne({
+    //       characterId: context.character.characterId,
+    //     });
 
-        return characterData
-      }
-      throw console.error('No character by this name');
-    },
+    //     return characterData
+    //   }
+    //   throw console.error('No character by this name');
+    // },
 
-    userCharacters: async (parent, args, context) => {
-      if (context.user) {
-        const userData = await User.findOne({ _id: context.user._id })
-        const characterData = user.characterList
-      }
-      return characterData
-    }
+  //   userCharacters: async (parent, args, context) => {
+  //     if (context.user) {
+  //       const userData = await User.findOne({ _id: context.user._id })
+  //       const characterData = user.characterList
+  //     }
+  //     return characterData
+  //   }
     
-  },
+  // },
 
   Mutation: {
     addUser: async (parent, args) => {
@@ -95,9 +95,6 @@ const resolvers = {
       }
     },
   },
-};
+}
 
 module.exports = resolvers;
-
-//addCharacter
-// updateCharacter
