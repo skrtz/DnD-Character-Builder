@@ -3,7 +3,7 @@ const { gql } = require("apollo-server-express");
 const typeDefs = gql`
   type Character {
     characterId: ID!
-    createdBy: String
+    createdBy: User
     name: String!
     race: String
     image: String
@@ -12,6 +12,7 @@ const typeDefs = gql`
   }
 
   input characterInput {
+    characterId: String
     name: String!
     race: String
     image: String
@@ -24,7 +25,7 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
-    characterList: [Character!]
+    characters: [Character!]
   }
 
   type Auth {
