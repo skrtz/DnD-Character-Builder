@@ -25,7 +25,7 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
-    characterList: [Character!]
+    characters: [Character!]
   }
 
   type Auth {

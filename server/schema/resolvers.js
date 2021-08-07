@@ -1,10 +1,9 @@
 const { AuthenticationError } = require("apollo-server-express");
 
-const { User } = require("../models");
+const { User, Character } = require("../models");
 
 const { signToken } = require("../utils/auth");
 
-const Character = characterSchema
 
 const resolvers = {
   Query: {
@@ -67,9 +66,10 @@ const resolvers = {
       if (context.user) {
         const updatedUser = await User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $push: { characterList: characterData } },
+          { $push: { characters: characterData.characterId } },
           { new: true }
         );
+        console.log(updatedUser)
         return updatedUser;
       }
       throw new AuthenticationError("You need to be logged in");
