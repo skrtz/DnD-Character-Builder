@@ -12,10 +12,10 @@ const characterSchema = new Schema({
     required: true,
   },
   
-  characterId: {
-    type: String,
-    required: true,
-  },
+  // characterId: {
+  //   type: ,
+  //   required: true,
+  // },
   image: {
     type: String,
   },
