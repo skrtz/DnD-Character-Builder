@@ -66,7 +66,7 @@ const resolvers = {
       if (context.user) {
         const updatedUser = await User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $push: { characters: characterData._id } },
+          { $push: { characters: newCharacter._id } },
           { new: true }
         );
         console.log(updatedUser);
