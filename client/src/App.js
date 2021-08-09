@@ -8,6 +8,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Header from './components/Header';
+import Home from './pages/Home';
+import Signup from './pages/Signup';
 
 const httpLink = createHttpLink({
     uri: '/graphql',
@@ -38,7 +40,17 @@ const authLink = setContext((_, { headers }) => {
             <Router>
                 <div className="flex-column justify-flex-start min-100-vh">
                     <Header />
-                    {/* <Login /> */}
+                    <div className="container">
+                      <Route exact path="/">
+                        <Home />
+                      </Route>
+                      <Route exact path="/login">
+                        <Login />
+                      </Route>
+                      <Route exact path="/signup">
+                        <Signup />
+                      </Route>
+                    </div>
                 </div>
             </Router>
         </ApolloProvider>
