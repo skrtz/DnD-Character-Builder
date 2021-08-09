@@ -12,7 +12,6 @@ const typeDefs = gql`
   }
 
   input characterInput {
-    characterId: String
     name: String!
     race: String
     image: String
@@ -20,12 +19,14 @@ const typeDefs = gql`
     background: String
   }
 
+
+
   type User {
     _id: ID!
     username: String
     email: String
     password: String
-    characters: [Character!]
+    characters: [Character]
   }
 
   type Auth {
@@ -38,17 +39,15 @@ const typeDefs = gql`
 
     # character: Character
     # userCharacters: characterList
-
   }
 
   type Mutation {
     addUser(email: String, username: String, password: String): User
     login(email: String!, password: String!): Auth
-    deleteCharacter(characterId: String): User
+    deleteCharacter(characterId: ID): User
     addCharacter(characterData: characterInput): User
 
     # updateCharacter(characterData: characterInput): User
-
   }
 `;
 
