@@ -9,13 +9,13 @@ const Header = () => {
     Auth.logout();
   };
   return (
-    <header className="bg-primary text-light mb-4 justify-content-spacebtween align-center">
+    <header id="header">
       <div id="nav">
         <div>
           <Link className="text-light" to="/">
             <h1 className="m-0">D&D Creations</h1>
           </Link>
-          <p className="m-0">Make fantasy reality</p>
+          <p>Make fantasy reality</p>
         </div>
         <div>
           {Auth.loggedIn() ? (

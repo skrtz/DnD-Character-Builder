@@ -4,6 +4,23 @@
     background-size: cover;
 }
 
+
+/* Header css */
+
+#header {
+    background-color: black;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    margin: 1px;
+}
+
+header p {
+    color: white;
+    margin: 0;
+}
+
 #nav {
     display: flex;
     justify-content: space-between;
