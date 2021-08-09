@@ -21,11 +21,11 @@ const resolvers = {
 
     // character: async (parent, args, context) => {
     //   if (context.character) {
-    //     const characterData = await Characters.findOne({
+    //     const characterInput = await Characters.findOne({
     //       characterId: context.character.characterId,
     //     });
 
-    //     return characterData
+    //     return characterInput
     //   }
     //   throw console.error('No character by this name');
     // },
@@ -33,9 +33,9 @@ const resolvers = {
     //   userCharacters: async (parent, args, context) => {
     //     if (context.user) {
     //       const userData = await User.findOne({ _id: context.user._id })
-    //       const characterData = user.characterList
+    //       const characterInput = user.characterList
     //     }
-    //     return characterData
+    //     return characterInput
     //   }
   },
 
@@ -57,10 +57,10 @@ const resolvers = {
       return { token, user };
     },
 
-    addCharacter: async (parent, { characterData }, context) => {
-      console.log(characterData);
+    addCharacter: async (parent, { characterInput }, context) => {
+      console.log(characterInput);
 
-      const newCharacter = await Character.create(characterData);
+      const newCharacter = await Character.create(characterInput);
       console.log(newCharacter);
 
       if (context.user) {
@@ -89,23 +89,32 @@ const resolvers = {
         const character = await Character.findOneAndDelete({
           _id: characterId,
         });
-        console.log(updatedUser.characters)
+        console.log(updatedUser.characters);
         return updatedUser;
       }
     },
 
-    // updateCharacter: async (parent, { characterId }, context) => {
-    //   if (context.user) {
-    //     const character = Characters.findOneAndUpdate({
-    //       _id: characterId,
-    //       createdBy: context.user.username,
-    //     });
-    //     await User.findOneAndUpdate(
-    //       { _id: context.user._id },
-    //       { $pull: { character: character._id } }
-    //     );
-    //   }
-    // },
+    updateCharacter: async (
+      parent,
+      { characterId, characterInput },
+      context
+    ) => {
+      if (context.user) {
+        console.log(characterInput)
+        const updatedCharacter = await Character.findByIdAndUpdate(
+          { _id: characterId },
+          {
+              name:  characterInput.name ,
+              race: characterInput.race,
+              image: characterInput.image,
+              class: characterInput.class,
+              background: characterInput.background,  
+          },
+          {new: true}
+        );
+        console.log(updatedCharacter)
+      }
+    },
   },
 }
 module.exports = resolvers;
