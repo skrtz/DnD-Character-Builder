@@ -123,9 +123,5 @@ const resolvers = {
       }
     },
   },
-};
-
+}
 module.exports = resolvers;
-
-//addCharacter
-// updateCharacter
