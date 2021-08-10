@@ -41,16 +41,3 @@ export const ADD_CHAR = gql`
   }
 `;
 
-<<<<<<< HEAD
-=======
-export const UPDATE_CHAR = gql`
-  mutation updateChar($characterId: ID, $characterInput: characterInput) {
-    updateCharacter(
-      characterId: $characterId,
-      characterInput: $characterInput
-    ) {
-      username
-    }
-  }
-`;
->>>>>>> 5e1aacccd365d90b06290b5bfda324363c83e9a4
