@@ -1,6 +1,7 @@
 const { AuthenticationError } = require("apollo-server-express");
 
 const { User, Character } = require("../models");
+const { populate } = require("../models/Character");
 
 const { signToken } = require("../utils/auth");
 
@@ -19,24 +20,30 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
 
-    // character: async (parent, args, context) => {
-    //   if (context.character) {
-    //     const characterInput = await Characters.findOne({
-    //       characterId: context.character.characterId,
-    //     });
+    character: async (parent, {characterId}, context) => {
+      if (context.user) {
+        const character = await Character.findById({
+          _id: characterId,
+        });
+        console.log(character)
+        return character
+      }
+      throw console.error('No character by this name');
+    },
 
-    //     return characterInput
-    //   }
-    //   throw console.error('No character by this name');
-    // },
+      userCharacters: async (parent, args, context) => {
+        if (context.user) {
+          const userData = await User.findOne({ _id: context.user._id })
+          populate('Character')
+        }
+        return 
+      },
 
-    //   userCharacters: async (parent, args, context) => {
-    //     if (context.user) {
-    //       const userData = await User.findOne({ _id: context.user._id })
-    //       const characterInput = user.characterList
-    //     }
-    //     return characterInput
-    //   }
+    getAllCharacters: async (parent, {} ,context) => {
+      const allCharacters = await Character.find();
+      console.log(allCharacters);
+      return allCharacters;
+    },
   },
 
   Mutation: {
@@ -100,19 +107,19 @@ const resolvers = {
       context
     ) => {
       if (context.user) {
-        console.log(characterInput)
+        console.log(characterInput);
         const updatedCharacter = await Character.findByIdAndUpdate(
           { _id: characterId },
           {
-              name:  characterInput.name ,
-              race: characterInput.race,
-              image: characterInput.image,
-              class: characterInput.class,
-              background: characterInput.background,  
+            name: characterInput.name,
+            race: characterInput.race,
+            image: characterInput.image,
+            class: characterInput.class,
+            background: characterInput.background,
           },
-          {new: true}
+          { new: true }
         );
-        console.log(updatedCharacter)
+        console.log(updatedCharacter);
       }
     },
   },
