@@ -11,11 +11,11 @@ const Header = () => {
   return (
     <header id="header">
       <div id="nav">
-        <div>
+        <div style={{marginLeft: "20px"}}>
           <Link className="text-light" to="/">
             <h1 className="m-0">D&D Creations</h1>
           </Link>
-          <p>Make fantasy reality</p>
+          <p>Make Fantasy Reality</p>
         </div>
         <div>
           {Auth.loggedIn() ? (

@@ -45,7 +45,7 @@ const authLink = setContext((_, { headers }) => {
             <Router>
                 <div className="flex-column justify-flex-start min-100-vh">
                     <Header />
-                    <div className="container">
+                    <div style={{maxWidth: "fit-content", margin: "0 auto", minWidth: "170px"}}>
                       <Route exact path="/">
                         <Home />
                       </Route>
