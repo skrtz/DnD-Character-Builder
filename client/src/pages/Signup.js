@@ -50,7 +50,7 @@ const Signup = () => {
                 </p>
               ) : (
                 <form onSubmit={handleFormSubmit}>
-                  <input
+                  <input style={{marginRight: "10px", marginBottom: "5px"}}
                     className="form-input"
                     placeholder="Your username"
                     name="username"
@@ -58,7 +58,7 @@ const Signup = () => {
                     value={formState.name}
                     onChange={handleChange}
                   />
-                  <input
+                  <input style={{marginRight: "10px"}}
                     className="form-input"
                     placeholder="Your email"
                     name="email"
@@ -66,7 +66,7 @@ const Signup = () => {
                     value={formState.email}
                     onChange={handleChange}
                   />
-                  <input
+                  <input style={{marginRight: "10px"}}
                     className="form-input"
                     placeholder="******"
                     name="password"
