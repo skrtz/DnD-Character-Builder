@@ -9,7 +9,7 @@ const Home = () => {
   // // grab queried character list
   const { loading, data } = useQuery(QUERY_ALL_CHAR);
   // check character
-  const characters = data?.character || [];
+  const characters = data?.getAllCharacters || [];
 
   return (
     <main>
