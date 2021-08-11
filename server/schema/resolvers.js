@@ -20,26 +20,28 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
 
-    character: async (parent, {characterId}, context) => {
+    character: async (parent, { characterId }, context) => {
       if (context.user) {
         const character = await Character.findById({
           _id: characterId,
         });
-        console.log(character)
-        return character
+        console.log(character);
+        return character;
       }
-      throw console.error('No character by this name');
+      throw console.error("No character by this name");
     },
 
-      userCharacters: async (parent, args, context) => {
-        if (context.user) {
-          const userData = await User.findOne({ _id: context.user._id })
-          populate('Character')
-        }
-        return 
-      },
+    userCharacters: async (parent, args, context) => {
+      if (context.user) {
+        const userData = await User.findOne({ _id: context.user._id }).populate("characters").exec()
+        console.log("Inside userCharacters" , userData)
+        
+        return userData.characters; 
+      }
+      
+    },
 
-    getAllCharacters: async (parent, {} ,context) => {
+    getAllCharacters: async (parent, {}, context) => {
       const allCharacters = await Character.find();
       console.log(allCharacters);
       return allCharacters;
@@ -54,7 +56,7 @@ const resolvers = {
       return { token, user };
     },
 
-    login: async (parent, { email, username, password }) => {
+    login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
       if (!user) {
@@ -75,9 +77,9 @@ const resolvers = {
           { _id: context.user._id },
           { $push: { characters: newCharacter._id } },
           { new: true }
-        );
-        console.log(updatedUser);
-        return updatedUser, newCharacter;
+        ).populate("characters").exec();
+        console.log("before return", updatedUser,newCharacter);
+        return updatedUser
       }
       throw new AuthenticationError("You need to be logged in");
     },
@@ -119,9 +121,10 @@ const resolvers = {
           },
           { new: true }
         );
+
         console.log(updatedCharacter);
       }
     },
   },
-}
+};
 module.exports = resolvers;

@@ -24,6 +24,7 @@ export const ADD_USER = gql`
   }
 `;
 
+
 export const ADD_CHAR = gql`
   mutation addChar($characterData: characterInput) {
     addCharacter(characterData: $characterData) {
@@ -41,3 +42,22 @@ export const ADD_CHAR = gql`
   }
 `;
 
+export const UPDATE_CHAR = gql`
+  mutation updateChar($characterId: ID, $characterInput: characterInput) {
+    updateCharacter(
+      characterId: $characterId,
+      characterInput: $characterInput
+    ) {
+      username
+    }
+  }
+`;
+
+export const DELETE_CHAR = gql`
+mutation deleteChar($characterId: ID){
+  deleteCharacter(characterId:$characterId){
+    username
+    
+  }
+}
+`
