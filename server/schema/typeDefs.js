@@ -3,7 +3,6 @@ const { gql } = require("apollo-server-express");
 const typeDefs = gql`
   type Character {
     characterId: ID!
-    createdBy: User
     name: String!
     race: String
     image: String
@@ -12,7 +11,10 @@ const typeDefs = gql`
     stats: OutputStats
     level: Int
     hitPoints: Int
+    weapons: String
     alignment: String
+    user: User
+    items: String
   }
 
   input characterInput {
@@ -25,6 +27,7 @@ const typeDefs = gql`
     level: Int
     hitPoints: Int
     alignment: String
+    items: String
   }
 
   type OutputStats {
