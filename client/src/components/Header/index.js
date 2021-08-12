@@ -21,7 +21,7 @@ const Header = () => {
           {Auth.loggedIn() ? (
             <>
             <Link className="btn btn-lg btn-info m-2" to="/"> Home </Link>
-              <Link className="btn btn-lg btn-info m-2" to="/me">
+              <Link className="btn btn-lg btn-info m-2" to="/profile">
                 {Auth.getProfile().data.username}'s Characters
               </Link>
               <Link className="btn btn-lg btn-info m-2" to="/createChar">Create Character</Link>
