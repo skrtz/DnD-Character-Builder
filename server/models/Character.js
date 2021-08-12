@@ -2,7 +2,6 @@ const { Schema, model } = require("mongoose");
 
 // This is a subdocument schema, it won't become its own model but we'll use it as the schema for the User's `savedBooks` array in User.js
 const characterSchema = new Schema({
-
   name: {
     type: String,
   },
@@ -12,10 +11,15 @@ const characterSchema = new Schema({
     required: true,
   },
 
-  // characterId: {
-  //   type: ,
-  //   required: true,
-  // },
+  stats: {
+    strength: { type: Number },
+    dexterity: { type: Number },
+    constitution: { type: Number },
+    intelligence: { type: Number },
+    wisdom: { type: Number },
+    charisma: { type: Number },
+  },
+
   image: {
     type: String,
   },

@@ -9,6 +9,7 @@ const typeDefs = gql`
     image: String
     class: String
     background: String
+    stats: OutputStats
   }
 
   input characterInput {
@@ -17,9 +18,26 @@ const typeDefs = gql`
     image: String
     class: String
     background: String
+    stats: InputStats
   }
 
+  type OutputStats {
+    strength: Int
+    dexterity: Int
+    constitution: Int
+    intelligence: Int
+    wisdom: Int
+    charisma: Int
+  }
 
+  input InputStats {
+    strength: Int
+    dexterity: Int
+    constitution: Int
+    intelligence: Int
+    wisdom: Int
+    charisma: Int
+  }
 
   type User {
     _id: ID!
