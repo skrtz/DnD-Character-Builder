@@ -6,6 +6,18 @@ const characterSchema = new Schema({
     type: String,
   },
 
+  level: {
+    type: Number,
+  },
+
+  hitPoints: {
+    type: Number
+  },
+
+  alignment: {
+    type: String
+  },
+
   background: {
     type: String,
     required: true,

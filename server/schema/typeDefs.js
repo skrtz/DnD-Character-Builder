@@ -10,6 +10,9 @@ const typeDefs = gql`
     class: String
     background: String
     stats: OutputStats
+    level: Int
+    hitPoints: Int
+    alignment: String
   }
 
   input characterInput {
@@ -19,6 +22,9 @@ const typeDefs = gql`
     class: String
     background: String
     stats: InputStats
+    level: Int
+    hitPoints: Int
+    alignment: String
   }
 
   type OutputStats {
