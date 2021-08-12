@@ -37,12 +37,11 @@ const Profile = () => {
 
   return (
     <div>
-      <div className="flex-row justify-center mb-3">
-        <h2 className="col-12 col-md-10 bg-dark text-light p-3 mb-5">
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+        <h1 id="profileHeader">
           Viewing {userParam ? `${user.username}'s` : 'your'} profile.
-        </h2>
-
-        <div className="col-12 col-md-10 mb-5">
+        </h1>
+        <div className="col-12 mb-5">
           <Characters
             characters={user.characters}
           />
