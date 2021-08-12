@@ -1,4 +1,4 @@
-import { Form } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 
 
 
@@ -20,9 +20,9 @@ const createChar = () => {
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Form.Check type="checkbox" label="Check me out" />
             </Form.Group>
-            <button variant="primary" type="submit">
+            <Button variant="primary" type="submit">
                 Submit
-            </button>
+            </Button>
         </Form>
     );
 };
