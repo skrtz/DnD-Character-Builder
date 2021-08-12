@@ -9,10 +9,9 @@ const resolvers = {
   Query: {
     me: async (parent, args, context) => {
       if (context.user) {
-        const userData = await User.findOne({ _id: context.user._id }).select(
-          "-__v -password"
-        )
-        .populate('characters')
+        const userData = await User.findOne({ _id: context.user._id })
+          .select("-__v -password")
+          .populate("characters");
 
         return userData;
       }
@@ -33,12 +32,13 @@ const resolvers = {
 
     userCharacters: async (parent, args, context) => {
       if (context.user) {
-        const userData = await User.findOne({ _id: context.user._id }).populate("characters").exec()
-        console.log("Inside userCharacters" , userData)
-        
-        return userData.characters; 
+        const userData = await User.findOne({ _id: context.user._id })
+          .populate("characters")
+          .exec();
+        console.log("Inside userCharacters", userData);
+
+        return userData.characters;
       }
-      
     },
 
     getAllCharacters: async (parent, {}, context) => {
@@ -65,7 +65,7 @@ const resolvers = {
 
       const correctPassword = await user.isCorrectPassword(password);
 
-      if(!correctPassword) {
+      if (!correctPassword) {
         throw new AuthenticationError("Incorrect Credentials");
       }
       const token = signToken(user);
@@ -73,19 +73,29 @@ const resolvers = {
     },
 
     addCharacter: async (parent, { characterInput }, context) => {
-      console.log(characterInput);
+      // console.log(characterInput);
 
       const newCharacter = await Character.create(characterInput);
-      console.log(newCharacter);
+      const updatedCharacter = await Character.findByIdAndUpdate(
+        { _id: newCharacter._id },
+        { $push: { user: context.user._id } },
+        { new: true }
+      )
+        .populate("user")
+        
+      
+        console.log(updatedCharacter);
 
       if (context.user) {
         const updatedUser = await User.findByIdAndUpdate(
           { _id: context.user._id },
           { $push: { characters: newCharacter._id } },
           { new: true }
-        ).populate("characters").exec();
-        console.log("before return", updatedUser,newCharacter);
-        return updatedUser
+        )
+          .populate("characters")
+          .exec();
+        // console.log("before return", updatedUser, newCharacter);
+        return updatedUser;
       }
       throw new AuthenticationError("You need to be logged in");
     },
