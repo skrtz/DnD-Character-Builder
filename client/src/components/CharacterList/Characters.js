@@ -3,8 +3,9 @@ import React from 'react';
 const Character = ({ characters }) => {
   if (!characters.length) {
     return <h3>No characters yet</h3>;
+    
   }
-
+  console.log()
   return (
     <div>
       {characters &&
