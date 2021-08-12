@@ -9,20 +9,22 @@ const Header = () => {
     Auth.logout();
   };
   return (
-    <header className="bg-primary text-light mb-4 py-3 flex-row align-center">
-      <div className="container flex-row justify-space-between-lg justify-center align-center">
-        <div>
+    <header id="header">
+      <div id="nav">
+        <div style={{marginLeft: "20px"}}>
           <Link className="text-light" to="/">
             <h1 className="m-0">D&D Creations</h1>
           </Link>
-          <p className="m-0">Make fantasy reality</p>
+          <p>Make Fantasy Reality</p>
         </div>
         <div>
           {Auth.loggedIn() ? (
             <>
+            <Link className="btn btn-lg btn-info m-2" to="/"> Home </Link>
               <Link className="btn btn-lg btn-info m-2" to="/me">
-                {Auth.getProfile().data.username}'s profile
+                {Auth.getProfile().data.username}'s Characters
               </Link>
+              <Link className="btn btn-lg btn-info m-2" to="/createChar">Create Character</Link>
               <button className="btn btn-lg btn-light m-2" onClick={logout}>
                 Logout
               </button>
