@@ -9,28 +9,32 @@ const Character = ({ characters }) => {
   }
   console.log()
   return (
-    <div>
-      {characters &&
-        characters.map((character) => (
-          <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={character.image} />
-            <Card.Body>
-              <Card.Title>{character.name}</Card.Title>
-              <Card.Text>
-              {character.background}
-              </Card.Text>
-            </Card.Body>
-            <ListGroup className="list-group-flush">
-              <ListGroupItem>Race: {character.race}</ListGroupItem>
-              <ListGroupItem>Class: {character.class} </ListGroupItem>
-              <ListGroupItem>Vestibulum at eros</ListGroupItem>
-            </ListGroup>
-            <Card.Body>
-              <Card.Link href="#">Card Link</Card.Link>
-              <Card.Link href="#">Another Link</Card.Link>
-            </Card.Body>
-          </Card>
-        ))}
+    <div id="characterCards">
+      <Row>
+        {characters &&
+          characters.map((character) => (
+            <Col style={{marginBottom: "20px"}}>
+              <Card style={{ width: '18rem' }}>
+                <Card.Img variant="top" src={character.image} />
+                <Card.Body>
+                  <Card.Title>{character.name}</Card.Title>
+                  <Card.Text>
+                    {character.background}
+                  </Card.Text>
+                </Card.Body>
+                <ListGroup className="list-group-flush">
+                  <ListGroupItem>Race: {character.race}</ListGroupItem>
+                  <ListGroupItem>Class: {character.class} </ListGroupItem>
+                  <ListGroupItem>Vestibulum at eros</ListGroupItem>
+                </ListGroup>
+                <Card.Body>
+                  <Card.Link href="#">Card Link</Card.Link>
+                  <Card.Link href="#">Another Link</Card.Link>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+      </Row>
     </div>
   );
 };
