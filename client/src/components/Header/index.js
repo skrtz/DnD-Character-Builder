@@ -1,5 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDragon } from '@fortawesome/free-solid-svg-icons';
+
+
+
 
 import Auth from '../../utils/auth';
 
@@ -12,10 +17,10 @@ const Header = () => {
     <header id="header">
       <div id="nav">
         <div style={{marginLeft: "20px"}}>
-          <Link className="text-light" to="/">
-            <h1 className="m-0">D&D Creations</h1>
+          <Link className="text-light" style={{textDecoration: "none"}} to="/">
+            <h1 className="m-0" style={{color: "red"}}><FontAwesomeIcon icon={faDragon} /> D&D Creations</h1>
           </Link>
-          <p>Make Fantasy Reality</p>
+          <p style={{color: "red"}}>Make Fantasy Reality</p>
         </div>
         <div>
           {Auth.loggedIn() ? (

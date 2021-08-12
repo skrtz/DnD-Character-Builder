@@ -26,3 +26,7 @@ header p {
     display: flex;
     justify-content: space-between;
 }
+
+#profileHeader {
+    color: white;
+}
