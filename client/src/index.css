@@ -27,4 +27,6 @@ header p {
     justify-content: space-between;
 }
 
-/* Character Cards Css */
+#profileHeader {
+    color: white;
+}
