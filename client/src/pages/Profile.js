@@ -14,6 +14,7 @@ const Profile = () => {
   const { loading, data } = useQuery(userParam ? QUERY_USER_CHAR : QUERY_ME, {
     variables: { username: userParam },
   });
+  console.log(data);
 
   const user = data?.me || data?.user || {};
   // redirect to personal profile page if username is yours
@@ -43,20 +44,9 @@ const Profile = () => {
 
         <div className="col-12 col-md-10 mb-5">
           <Characters
-            thoughts={user.thoughts}
-            title={`${user.username}'s thoughts...`}
-            showTitle={false}
-            showUsername={false}
+            characters={user.characters}
           />
         </div>
-        {!userParam && (
-          <div
-            className="col-12 col-md-10 mb-3 p-3"
-            style={{ border: '1px dotted #1a1a1a' }}
-          >
-            <Characters />
-          </div>
-        )}
       </div>
     </div>
   );
