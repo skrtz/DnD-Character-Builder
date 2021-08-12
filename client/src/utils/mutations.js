@@ -26,8 +26,8 @@ export const ADD_USER = gql`
 
 
 export const ADD_CHAR = gql`
-  mutation addChar($characterData: characterInput) {
-    addCharacter(characterData: $characterData) {
+  mutation addChar($characterInput: characterInput) {
+    addCharacter(characterInput: $characterInput) {
       email
       username
       password
