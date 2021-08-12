@@ -11,6 +11,7 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Profile from './pages/Profile';
+import CreateChar from './pages/CreateChar';
 
 const httpLink = createHttpLink({
     uri: '/graphql',
@@ -54,6 +55,9 @@ const authLink = setContext((_, { headers }) => {
                       </Route>
                       <Route exact path="/profile">
                         <Profile />
+                      </Route>
+                      <Route exact path="/createChar">
+                        <CreateChar />
                       </Route>
                     </div>
                 </div>
