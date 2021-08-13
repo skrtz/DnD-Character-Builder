@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/skrtz/DnD-Character-Builder#readme",
   "dependencies": {
-    "concurrently": "^6.2.0"
+    "concurrently": "^6.2.0",
+    "graphql": "^15.5.1"
   }
 }
