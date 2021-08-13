@@ -37,6 +37,20 @@ export const ADD_CHAR = gql`
         image
         class
         background
+        stats {
+          strength
+          dexterity
+          constition
+          intelligence
+          wisdom
+          charisma
+        }
+        level
+        hitPoint
+        weapons
+        alignment
+        user
+        items
       }
     }
   }
