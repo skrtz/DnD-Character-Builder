@@ -9,8 +9,8 @@ const typeDefs = gql`
     class: String
     background: String
     stats: OutputStats
-    level: Int
-    hitPoints: Int
+    level: String
+    hitPoints: String
     weapons: String
     alignment: String
     user: User
@@ -24,28 +24,29 @@ const typeDefs = gql`
     class: String
     background: String
     stats: InputStats
-    level: Int
-    hitPoints: Int
+    level: String
+    hitPoints: String
     alignment: String
     items: String
+    weapons: String
   }
 
   type OutputStats {
-    strength: Int
-    dexterity: Int
-    constitution: Int
-    intelligence: Int
-    wisdom: Int
-    charisma: Int
+    strength: String
+    dexterity: String
+    constitution: String
+    intelligence: String
+    wisdom: String
+    charisma: String
   }
 
   input InputStats {
-    strength: Int
-    dexterity: Int
-    constitution: Int
-    intelligence: Int
-    wisdom: Int
-    charisma: Int
+    strength: String
+    dexterity: String
+    constitution: String
+    intelligence: String
+    wisdom: String
+    charisma: String
   }
 
   type User {
