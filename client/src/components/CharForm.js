@@ -37,6 +37,7 @@ const CharForm = () => {
         } catch (err) {
             console.error(err);
         }
+        
     };
 
     const handleChange = (event) => {
@@ -192,9 +193,7 @@ const CharForm = () => {
             </Form.Group>
 
                 <button variant="primary" type="submit">
-                <Link to="/">
                     Submit
-                </Link>
                 </button>
 
         </Form>

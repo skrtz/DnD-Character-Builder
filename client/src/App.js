@@ -11,7 +11,7 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Profile from './pages/Profile';
-import CreateChar from './pages/CreateChar';
+import CreateChar from './pages/createChar';
 // import diceComponent from './components/diceComponent'
 
 
@@ -59,7 +59,7 @@ const authLink = setContext((_, { headers }) => {
                         <Profile />
                       </Route>
                     </div>
-                      <Route exact path="/createChar">
+                      <Route exact path="/CreateChar">
                         <CreateChar />
                         {/* <diceComponent /> */}
                       </Route>
