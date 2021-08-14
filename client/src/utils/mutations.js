@@ -43,10 +43,12 @@ export const ADD_CHAR = gql`
         wisdom
         charisma
         level
-        hitPoint
+        hitPoints
         weapons
         alignment
-        user
+        user {
+          username
+        }
         items
       }
     }
