@@ -13,11 +13,11 @@ const characterSchema = new Schema({
   },
 
   level: {
-    type: Number,
+    type: String,
   },
 
   hitPoints: {
-    type: Number
+    type: String
   },
 
   weapons: {
@@ -34,12 +34,12 @@ const characterSchema = new Schema({
   },
 
   stats: {
-    strength: { type: Number },
-    dexterity: { type: Number },
-    constitution: { type: Number },
-    intelligence: { type: Number },
-    wisdom: { type: Number },
-    charisma: { type: Number },
+    strength: { type: String },
+    dexterity: { type: String },
+    constitution: { type: String },
+    intelligence: { type: String },
+    wisdom: { type: String },
+    charisma: { type: String },
   },
 
   items: {
