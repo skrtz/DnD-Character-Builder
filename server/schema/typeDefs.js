@@ -28,6 +28,7 @@ const typeDefs = gql`
     hitPoints: Int
     alignment: String
     items: String
+    weapons: String
   }
 
   type OutputStats {
