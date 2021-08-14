@@ -12,7 +12,7 @@ import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Profile from './pages/Profile';
 import CreateChar from './pages/CreateChar';
-import diceComponent from './components/diceComponent'
+// import diceComponent from './components/diceComponent'
 
 
 const httpLink = createHttpLink({
@@ -61,7 +61,7 @@ const authLink = setContext((_, { headers }) => {
                     </div>
                       <Route exact path="/createChar">
                         <CreateChar />
-                        <diceComponent />
+                        {/* <diceComponent /> */}
                       </Route>
                 </div>
             </Router>

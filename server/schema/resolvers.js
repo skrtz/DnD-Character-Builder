@@ -73,20 +73,20 @@ const resolvers = {
     },
 
     addCharacter: async (parent, { characterInput }, context) => {
-      // console.log(characterInput);
-
-      const newCharacter = await Character.create(characterInput);
-      const updatedCharacter = await Character.findByIdAndUpdate(
-        { _id: newCharacter._id },
-        { $push: { user: context.user._id } },
-        { new: true }
-      )
-        .populate("user")
+      console.log(characterInput);
+      console.log('hello');
+      // const updatedCharacter = await Character.findByIdAndUpdate(
+      //   { _id: newCharacter._id },
+      //   { $push: { user: context.user._id } },
+      //   { new: true }
+      // )
+      //   .populate("user")
         
-      
-        console.log(updatedCharacter);
+    
 
       if (context.user) {
+        const newCharacter = await Character.create(characterInput);
+
         const updatedUser = await User.findByIdAndUpdate(
           { _id: context.user._id },
           { $push: { characters: newCharacter._id } },
