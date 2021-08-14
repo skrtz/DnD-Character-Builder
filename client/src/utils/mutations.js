@@ -36,23 +36,12 @@ export const ADD_CHAR = gql`
         image
         class
         background
-<<<<<<< HEAD
-        stats {
-          strength
-          dexterity
-          constitution
-          intelligence
-          wisdom
-          charisma
-        }
-=======
         strength
         dexterity
-        constition
+        constitution
         intelligence
         wisdom
         charisma
->>>>>>> 9c1ef371e34a5719c4c7bee0706e6f5ec1fe01e8
         level
         hitPoints
         weapons

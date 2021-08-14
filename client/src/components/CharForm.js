@@ -9,12 +9,12 @@ const CharForm = () => {
         name: '',
         race: '',
         class: '',
-        // strength: '',
-        // dexterity: '',
-        // constitution: '',
-        // intelligence: '',
-        // wisdom: '',
-        // charisma: '',
+        strength: '',
+        dexterity: '',
+        constitution: '',
+        intelligence: '',
+        wisdom: '',
+        charisma: '',
         background: '',
         alignment: '',
         weapons: ''
@@ -78,51 +78,51 @@ const CharForm = () => {
                 />
             </Form.Group>
 
-            {/* <Form.Group className="mb-3" controlId="charAbilities">
+            <Form.Group className="mb-3" controlId="charAbilities">
                 <Form.Label>Enter Ability Scores</Form.Label>
                 <Form.Control
                     type="number"
                     placeholder="Strength Score"
                     name="strength"
-                    value={parseInt(formState.strength)}
+                    value={formState.strength}
                     onChange={handleChange}
                 />
                 <Form.Control
                     type="number"
                     placeholder="Dexterity Score"
                     name="dexterity"
-                    value={parseInt(formState.dexterity)}
+                    value={formState.dexterity}
                     onChange={handleChange}
                 />
                 <Form.Control
                     type="number"
                     placeholder="Constitution Score"
                     name="constitution"
-                    value={parseInt(formState.constitution)}
+                    value={formState.constitution}
                     onChange={handleChange}
                 />
                 <Form.Control
                     type="number"
                     placeholder="Intelligence Score"
                     name="intelligence"
-                    value={parseInt(formState.intelligence)}
+                    value={formState.intelligence}
                     onChange={handleChange}
                 />
                 <Form.Control
                     type="number"
                     placeholder="Wisdom Score"
                     name="wisdom"
-                    value={parseInt(formState.wisdom)}
+                    value={formState.wisdom}
                     onChange={handleChange}
                 />
                 <Form.Control
                     type="number"
                     placeholder="Charisma Score"
                     name="charisma"
-                    value={parseInt(formState.charisma)}
+                    value={formState.charisma}
                     onChange={handleChange}
                 />
-            </Form.Group> */}
+            </Form.Group>
 
             <Form.Group className="mb-3" controlId="charBackground">
                 <Form.Label>Enter Character Background</Form.Label>
@@ -174,7 +174,7 @@ const CharForm = () => {
                     type="number"
                     placeholder="Enter HP"
                     name="hitPoints"
-                    value={parseInt(formState.hitPoints)}
+                    value={formState.hitPoints}
                     onChange={handleChange}
                 />
             </Form.Group>
@@ -185,7 +185,7 @@ const CharForm = () => {
                     type="number"
                     placeholder="Enter Level"
                     name="level"
-                    value={parseInt(formState.level)}
+                    value={formState.level}
                     onChange={handleChange}
                 />
             </Form.Group>
