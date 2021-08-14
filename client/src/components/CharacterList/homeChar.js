@@ -14,7 +14,7 @@ const homeChar = ({ characters }) => {
           {characters &&
             characters.map((character) => (
               <Col style={{marginBottom: "20px"}}>
-                <Card style={{ width: '18rem' }} id="cardColor">
+                <Card style={{ width: "200px" }} id="cardBody">
                   <Card.Img variant="top" src={character.image} />
                   <Card.Body>
                     <Card.Title>{character.name}</Card.Title>

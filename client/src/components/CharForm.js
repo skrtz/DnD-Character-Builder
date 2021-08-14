@@ -7,6 +7,7 @@ import { ADD_CHAR } from '../utils/mutations';
 const CharForm = () => {
     const [formState, setFormState] = useState({
         name: '',
+        image: '',
         race: '',
         class: '',
         strength: '',
@@ -52,6 +53,17 @@ const CharForm = () => {
                     placeholder="Enter Name"
                     name="name"
                     value={formState.name}
+                    onChange={handleChange}
+                />
+            </Form.Group>
+
+               <Form.Group className="mb-3" controlId="charName">
+                <Form.Label>Enter A Image Link</Form.Label>
+                <Form.Control
+                    type="text"
+                    placeholder="Must end with .jpg or .png"
+                    name="image"
+                    value={formState.image}
                     onChange={handleChange}
                 />
             </Form.Group>
@@ -189,7 +201,7 @@ const CharForm = () => {
                     onChange={handleChange}
                 />
             </Form.Group>
-
+            
             <button variant="primary" type="submit">
                 Submit
             </button>
