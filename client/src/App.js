@@ -59,7 +59,7 @@ const authLink = setContext((_, { headers }) => {
                         <Profile />
                       </Route>
                     </div>
-                      <Route exact path="/createChar">
+                      <Route exact path="/CreateChar">
                         <CreateChar />
                         {/* <diceComponent /> */}
                       </Route>
