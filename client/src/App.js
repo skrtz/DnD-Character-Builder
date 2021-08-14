@@ -56,10 +56,10 @@ const authLink = setContext((_, { headers }) => {
                       <Route exact path="/profile">
                         <Profile />
                       </Route>
+                    </div>
                       <Route exact path="/createChar">
                         <CreateChar />
                       </Route>
-                    </div>
                 </div>
             </Router>
         </ApolloProvider>
