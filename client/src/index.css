@@ -1,8 +1,11 @@
 #background-image {
+    background-color: black;
     background-image: url("./components/images/DnD_bg-Eberron02.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
 }
 
 
@@ -38,4 +41,9 @@ header p {
     max-width: 300px;
     background-color: tan;
     padding: 20px;
+}
+
+#buttonLayout {
+    display: flex;
+    flex-direction: row;
 }
