@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Card, ListGroupItem, ListGroup, Col, Row, Form } from 'react-bootstrap';
 import { useMutation } from '@apollo/client';
-import { ADD_CHAR } from '../../utils/mutations';
+import { ADD_CHAR } from '../utils/mutations';
 
 
 const CharForm = () => {
@@ -41,13 +41,12 @@ const CharForm = () => {
     };
 
     return (
-        <Form onSubmit={handleFormSubmit}>
+        <Form onSubmit={handleFormSubmit} id="charForm">
             <Form.Group className="mb-3" controlId="charName">
                 <Form.Label>Enter Name</Form.Label>
                 <Form.Control
                     type="input"
                     placeholder="Enter Name"
-                    value="name"
                 />
             </Form.Group>
 
@@ -56,7 +55,6 @@ const CharForm = () => {
                 <Form.Control
                     type="input"
                     placeholder="Enter Race"
-                    value="race"
                 />
             </Form.Group>
 
@@ -65,41 +63,36 @@ const CharForm = () => {
                 <Form.Control
                     type="input"
                     placeholder="Enter Class"
-                    value="class"
                 />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="charAbilities" value="stats">
                 <Form.Label>Ability Scores</Form.Label>
+                <p>(orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum)</p>
                 <Form.Control
                     type="input"
                     placeholder="Strength"
-                    value="strength"
                 />
                 <Form.Control
                     type="input"
                     placeholder="Dexterity"
-                    value= "dexterity"
                 />
                 <Form.Control 
                     type="input" 
                     placeholder="Constitution" 
-                    value="constitution"
                 />
                 <Form.Control 
                     type="input" 
                     placeholder="Intelligence" 
-                    value="intelligence"
                 />
                 <Form.Control 
                     type="input" 
                     placeholder="Wisdom" 
-                    value="wisdom"
+
                 />
                 <Form.Control 
                     type="input" 
                     placeholder="Charisma" 
-                    value="charisma"
                 />
             </Form.Group>
 
@@ -108,7 +101,6 @@ const CharForm = () => {
                 <Form.Control 
                     type="input" 
                     placeholder="Enter Background" 
-                    value="background"
                 />
             </Form.Group>
 
@@ -117,7 +109,6 @@ const CharForm = () => {
                 <Form.Control 
                     type="input" 
                     placeholder="Enter Alignment" 
-                    value="alignment"
                 />
             </Form.Group>
 
@@ -126,7 +117,6 @@ const CharForm = () => {
                 <Form.Control 
                     type="input" 
                     placeholder="Enter Items" 
-                    value="items"
                 />
             </Form.Group>
 
@@ -135,7 +125,6 @@ const CharForm = () => {
                 <Form.Control 
                     type="input" 
                     placeholder="Enter Weapons" 
-                    value="weapons"
                 />
             </Form.Group>
 
@@ -144,7 +133,6 @@ const CharForm = () => {
                 <Form.Control 
                     type="input" 
                     placeholder="Enter HP" 
-                    value="hitPoints"
                 />
             </Form.Group>
 
@@ -153,7 +141,6 @@ const CharForm = () => {
                 <Form.Control 
                     type="input" 
                     placeholder="Enter Level" 
-                    value="level"
                 />
             </Form.Group>
 
