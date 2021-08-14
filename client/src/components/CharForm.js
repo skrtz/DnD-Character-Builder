@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import { useMutation } from '@apollo/client';
-import { ADD_CHAR } from '../../utils/mutations';
+import { ADD_CHAR } from '../utils/mutations';
 
 
 const CharForm = () => {
@@ -9,12 +9,12 @@ const CharForm = () => {
         name: '',
         race: '',
         class: '',
-        strength: '',
-        dexterity: '',
-        constitution: '',
-        intelligence: '',
-        wisdom: '',
-        charisma: '',
+        // strength: '',
+        // dexterity: '',
+        // constitution: '',
+        // intelligence: '',
+        // wisdom: '',
+        // charisma: '',
         background: '',
         alignment: '',
         weapons: ''
@@ -44,7 +44,7 @@ const CharForm = () => {
     };
 
     return (
-        <Form onSubmit={handleFormSubmit}>
+        <Form onSubmit={handleFormSubmit} id="charForm">
             <Form.Group className="mb-3" controlId="charName">
                 <Form.Label>Enter Name</Form.Label>
                 <Form.Control
@@ -78,7 +78,7 @@ const CharForm = () => {
                 />
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="charAbilities">
+            {/* <Form.Group className="mb-3" controlId="charAbilities">
                 <Form.Label>Enter Ability Scores</Form.Label>
                 <Form.Control
                     type="number"
@@ -122,7 +122,7 @@ const CharForm = () => {
                     value={parseInt(formState.charisma)}
                     onChange={handleChange}
                 />
-            </Form.Group>
+            </Form.Group> */}
 
             <Form.Group className="mb-3" controlId="charBackground">
                 <Form.Label>Enter Character Background</Form.Label>

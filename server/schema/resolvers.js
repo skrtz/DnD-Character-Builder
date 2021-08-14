@@ -74,7 +74,7 @@ const resolvers = {
 
     addCharacter: async (parent, { characterInput }, context) => {
       console.log(characterInput);
-
+      console.log('hello');
       // const updatedCharacter = await Character.findByIdAndUpdate(
       //   { _id: newCharacter._id },
       //   { $push: { user: context.user._id } },

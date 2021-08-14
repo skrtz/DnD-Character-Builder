@@ -1,5 +1,5 @@
 import React from 'react';
-import CharForm from "../components/BuildForm/CharForm";
+import CharForm from "../components/CharForm";
 
 
 const CreateChar = () => {

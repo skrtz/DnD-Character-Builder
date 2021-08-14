@@ -12,6 +12,8 @@ import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Profile from './pages/Profile';
 import CreateChar from './pages/CreateChar';
+// import diceComponent from './components/diceComponent'
+
 
 const httpLink = createHttpLink({
     uri: '/graphql',
@@ -56,10 +58,11 @@ const authLink = setContext((_, { headers }) => {
                       <Route exact path="/profile">
                         <Profile />
                       </Route>
+                    </div>
                       <Route exact path="/createChar">
                         <CreateChar />
+                        {/* <diceComponent /> */}
                       </Route>
-                    </div>
                 </div>
             </Router>
         </ApolloProvider>
