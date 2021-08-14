@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Form } from 'react-bootstrap';
 import { useMutation } from '@apollo/client';
 import { ADD_CHAR } from '../utils/mutations';
@@ -190,9 +191,11 @@ const CharForm = () => {
                 />
             </Form.Group>
 
-            <button variant="primary" type="submit">
-                Submit
-            </button>
+                <button variant="primary" type="submit">
+                <Link to="/">
+                    Submit
+                </Link>
+                </button>
 
         </Form>
     )

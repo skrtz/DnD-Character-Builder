@@ -3,6 +3,7 @@ import { gql } from "@apollo/client";
 export const QUERY_ALL_CHAR = gql`
   query getAllCharacters {
     getAllCharacters {
+      image
       name
       race
       class
