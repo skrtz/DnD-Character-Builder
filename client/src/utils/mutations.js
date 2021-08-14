@@ -38,7 +38,7 @@ export const ADD_CHAR = gql`
         background
         strength
         dexterity
-        constition
+        constitution
         intelligence
         wisdom
         charisma
