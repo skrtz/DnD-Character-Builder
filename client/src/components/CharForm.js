@@ -48,6 +48,7 @@ const CharForm = () => {
         <Form onSubmit={handleFormSubmit} id="charForm">
             <Form.Group className="mb-3" controlId="charName">
                 <Form.Label>Enter Name</Form.Label>
+                <p>Before choosing</p>
                 <Form.Control
                     type="text"
                     placeholder="Enter Name"
