@@ -1,7 +1,7 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 // import character list component
-import Characters from '../components/CharacterList/Characters';
+import Characters from '../components/CharacterList/homeChar';
 import { QUERY_ALL_CHAR } from '../utils/queries';
 
 
