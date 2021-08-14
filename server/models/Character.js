@@ -10,6 +10,7 @@ const characterSchema = new Schema({
   },
   name: {
     type: String,
+    required: true,
   },
 
   level: {
@@ -30,7 +31,6 @@ const characterSchema = new Schema({
 
   background: {
     type: String,
-    required: true,
   },
 
   stats: {
@@ -54,11 +54,11 @@ const characterSchema = new Schema({
   },
   race: {
     type: String,
-    required: true,
+    // required: true,
   },
   class: {
     type: String,
-    required: true,
+    // required: true,
   },
 });
 

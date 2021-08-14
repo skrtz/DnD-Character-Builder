@@ -40,16 +40,18 @@ export const ADD_CHAR = gql`
         stats {
           strength
           dexterity
-          constition
+          constitution
           intelligence
           wisdom
           charisma
         }
         level
-        hitPoint
+        hitPoints
         weapons
         alignment
-        user
+        user {
+          username
+        }
         items
       }
     }
