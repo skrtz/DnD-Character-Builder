@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Card, ListGroupItem, ListGroup, Col, Row, Form } from 'react-bootstrap';
 import { useMutation } from '@apollo/client';
-import { ADD_CHAR } from '../../utils/mutations';
+import { ADD_CHAR } from '../utils/mutations';
 
 
 const CharForm = () => {
