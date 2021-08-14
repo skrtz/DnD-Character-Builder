@@ -24,7 +24,6 @@ export const ADD_USER = gql`
   }
 `;
 
-
 export const ADD_CHAR = gql`
   mutation addChar($characterInput: characterInput) {
     addCharacter(characterInput: $characterInput) {
@@ -37,6 +36,7 @@ export const ADD_CHAR = gql`
         image
         class
         background
+<<<<<<< HEAD
         stats {
           strength
           dexterity
@@ -45,6 +45,14 @@ export const ADD_CHAR = gql`
           wisdom
           charisma
         }
+=======
+        strength
+        dexterity
+        constition
+        intelligence
+        wisdom
+        charisma
+>>>>>>> 9c1ef371e34a5719c4c7bee0706e6f5ec1fe01e8
         level
         hitPoints
         weapons
@@ -61,7 +69,7 @@ export const ADD_CHAR = gql`
 export const UPDATE_CHAR = gql`
   mutation updateChar($characterId: ID, $characterInput: characterInput) {
     updateCharacter(
-      characterId: $characterId,
+      characterId: $characterId
       characterInput: $characterInput
     ) {
       username
@@ -70,10 +78,9 @@ export const UPDATE_CHAR = gql`
 `;
 
 export const DELETE_CHAR = gql`
-mutation deleteChar($characterId: ID){
-  deleteCharacter(characterId:$characterId){
-    username
-    
+  mutation deleteChar($characterId: ID) {
+    deleteCharacter(characterId: $characterId) {
+      username
+    }
   }
-}
-`
+`;

@@ -8,7 +8,12 @@ const typeDefs = gql`
     image: String
     class: String
     background: String
-    stats: OutputStats
+    strength: String
+    dexterity: String
+    constitution: String
+    intelligence: String
+    wisdom: String
+    charisma: String
     level: String
     hitPoints: String
     weapons: String
@@ -23,7 +28,12 @@ const typeDefs = gql`
     image: String
     class: String
     background: String
-    stats: InputStats
+    strength: String
+    dexterity: String
+    constitution: String
+    intelligence: String
+    wisdom: String
+    charisma: String
     level: String
     hitPoints: String
     alignment: String
@@ -31,23 +41,23 @@ const typeDefs = gql`
     weapons: String
   }
 
-  type OutputStats {
-    strength: String
-    dexterity: String
-    constitution: String
-    intelligence: String
-    wisdom: String
-    charisma: String
-  }
+  # type OutputStats {
+  #   strength: String
+  #   dexterity: String
+  #   constitution: String
+  #   intelligence: String
+  #   wisdom: String
+  #   charisma: String
+  # }
 
-  input InputStats {
-    strength: String
-    dexterity: String
-    constitution: String
-    intelligence: String
-    wisdom: String
-    charisma: String
-  }
+  # input InputStats {
+  #   strength: String
+  #   dexterity: String
+  #   constitution: String
+  #   intelligence: String
+  #   wisdom: String
+  #   charisma: String
+  # }
 
   type User {
     _id: ID!
