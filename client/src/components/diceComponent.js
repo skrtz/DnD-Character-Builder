@@ -7,35 +7,42 @@ import {
   Row,
   Form,
 } from "react-bootstrap";
-import { DiceRoller, exportFormats } from "rpg-dice-roller";
+import { DiceRoll, exportFormats } from "rpg-dice-roller";
 
-const roller = new DiceRoller();
 
-const diceComponent = () => {
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
 
-    const rolls = roller.roll(
-      "4d6dl1",
-      "4d6dl1",
-      "4d6dl1",
-      "4d6dl1",
-      "4d6dl1",
-      "4d6dl1"
-    );
+const DiceComponent = () => {
+  
+  const [diceRoll, setDiceRoll] = useState({
+  diceRoll:'',
+})
+  
+  
+  
+  const rollDice = async (event) => {
+    // event.preventDefault();
 
-    return (
-      <Form onSubmit={handleFormSubmit}>
-        <Form.Group className="mb-3" controlId="diceRoll">
-          <Form.Label>Roll Dice!</Form.Label>
-          <p>{roller.output}</p>
-        </Form.Group>
-        <button variant="primary" type="submit">
-          Submit
-        </button>
-      </Form>
-    );
+    const roll = new DiceRoll("4d6dl1");
+    
+    console.log(roll.output)
+
+    return roll.output
+    
   };
-};
 
-export default diceComponent
+  const handleChange = (event) => {
+    const { diceRoll, userRoll } = event.target;
+        setDiceRoll({ ...diceRoll, diceRoll: userRoll });
+  }
+
+  return (
+    <div>
+      <p>You rolled  </p>
+      <button onClick={rollDice}>
+        Roll Dice!
+      </button>
+    </div>
+  );
+}
+
+export default DiceComponent
