@@ -15,7 +15,13 @@
     
 }
 
+#formTitle {
+    font-family: fantasy;
+}
 
+#text {
+    font-size: 14px;
+}
 /* Header css */
 
 #header {
