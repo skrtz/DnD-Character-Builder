@@ -1,5 +1,6 @@
 #cardBody {
     border: solid;
+    border-color: white;
 }
 
 #background-image {
@@ -52,4 +53,8 @@ header p {
 #buttonLayout {
     display: flex;
     flex-direction: row;
+}
+
+.ul {
+    padding: 0px;
 }
