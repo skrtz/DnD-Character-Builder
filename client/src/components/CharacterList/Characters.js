@@ -1,15 +1,45 @@
-import React from 'react';
-import { Card, ListGroupItem, ListGroup, Col, Row, Button } from 'react-bootstrap';
+import React from "react";
+import {
+  Card,
+  ListGroupItem,
+  ListGroup,
+  Col,
+  Row,
+  Button,
+} from "react-bootstrap";
+import { useMutation, useQuery } from "@apollo/client";
+import { DELETE_CHAR } from "../../utils/mutations";
+import Auth from "../../utils/auth";
+import { QUERY_ME } from "../../utils/queries";
 
+const Character = ({ characters }) => {
+  const [removeChar] = useMutation(DELETE_CHAR);
+  const { loading, data } = useQuery(QUERY_ME);
 
+  const userData = data
+  console.log(userData)
+
+  const handleRemoveChar = async (characterId) => {
+    
+    const token = Auth.loggedIn() ? Auth.getToken() : null;
+    if (!token) {
+      return false;
+    }
+    try {
+      await removeChar({
+        variables: { characterId },
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
 const Character = ({ characters }) => {
 
   if (!characters.length) {
     return <h3>No characters yet</h3>;
-
   }
-  console.log()
+  console.log();
   return (
     <div id="characterCards">
       <Row>
@@ -51,7 +81,12 @@ const Character = ({ characters }) => {
                 </ListGroup>
                 <Card.Body>
                   <Button href="#">Edit</Button>
-                  <Button href="#">Delete</Button>
+                  <Button
+                    href="#"
+                    onClick={() => handleRemoveChar(character._id)}
+                  >
+                    Delete
+                  </Button>
                 </Card.Body>
               </Card>
             </Col>
@@ -60,6 +95,5 @@ const Character = ({ characters }) => {
     </div>
   );
 };
-
 
 export default Character;

@@ -70,6 +70,7 @@ export const DELETE_CHAR = gql`
   mutation deleteChar($characterId: ID) {
     deleteCharacter(characterId: $characterId) {
       username
+      
     }
   }
 `;

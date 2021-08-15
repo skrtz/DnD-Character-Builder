@@ -16,6 +16,7 @@ export const QUERY_ME = gql`
       username
       email
       characters {
+        _id
         name
         race
         image
@@ -46,10 +47,9 @@ export const QUERY_USER_CHAR = gql`
 `;
 
 export const QUERY_CHAR = gql`
-query character($characterId: ID){
-  character(characterId: $characterId){
-    
-    race
+  query character($characterId: ID) {
+    character(characterId: $characterId) {
+      race
+    }
   }
-}
 `;
