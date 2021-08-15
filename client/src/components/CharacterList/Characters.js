@@ -1,14 +1,13 @@
 import React from 'react';
 import { Card, ListGroupItem, ListGroup, Col, Row, Button } from 'react-bootstrap';
-import { useMutation } from '@apollo/client';
-import { DELETE_CHAR } from '../../utils/mutations';
+
+
 
 
 
 const Character = ({ characters }) => {
   
 
-  
   if (!characters.length) {
     return <h3>No characters yet</h3>;
 

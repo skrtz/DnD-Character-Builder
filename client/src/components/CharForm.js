@@ -4,6 +4,7 @@ import { useMutation } from "@apollo/client";
 import { ADD_CHAR } from "../utils/mutations";
 
 const CharForm = () => {
+
   const [formState, setFormState] = useState({
     name: "",
     race: "",
