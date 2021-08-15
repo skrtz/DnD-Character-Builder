@@ -6,10 +6,8 @@ import DiceComponent from '../components/diceComponent';
 const CreateChar = () => {
 
     return (
-        <>
         <CharForm />
-        <DiceComponent />
-        </>
+
     )
 };
 

@@ -4,14 +4,12 @@ import { ApolloProvider, ApolloClient, createHttpLink, InMemoryCache } from '@ap
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// import Home from './pages/Home';
-// import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Header from './components/Header';
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Profile from './pages/Profile';
-import CreateChar from './pages/createChar';
+import CreateChar from './pages/CreateChar';
 // import diceComponent from './components/diceComponent'
 
 
@@ -61,7 +59,6 @@ const authLink = setContext((_, { headers }) => {
                     </div>
                       <Route exact path="/CreateChar">
                         <CreateChar />
-                        {/* <diceComponent /> */}
                       </Route>
                 </div>
             </Router>
