@@ -4,8 +4,7 @@ export const QUERY_ALL_CHAR = gql`
   query getAllCharacters {
     getAllCharacters {
       name
-      race
-      class
+      image
     }
   }
 `;
