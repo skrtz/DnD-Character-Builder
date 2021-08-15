@@ -8,7 +8,6 @@ const CreateChar = () => {
     return (
         <>
         <CharForm />
-        <DiceComponent />
         </>
     )
 };
