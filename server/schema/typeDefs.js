@@ -2,7 +2,7 @@ const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
   type Character {
-    characterId: ID!
+    _id: ID
     name: String!
     race: String
     image: String
