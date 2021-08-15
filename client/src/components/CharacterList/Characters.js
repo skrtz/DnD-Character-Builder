@@ -3,8 +3,11 @@ import { Card, ListGroupItem, ListGroup, Col, Row, Button } from 'react-bootstra
 
 
 
+
+
 const Character = ({ characters }) => {
   
+
   if (!characters.length) {
     return <h3>No characters yet</h3>;
 
