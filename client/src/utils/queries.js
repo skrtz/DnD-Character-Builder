@@ -22,6 +22,14 @@ export const QUERY_ME = gql`
         image
         class
         background
+        strength
+        dexterity
+        constitution
+        intelligence
+        wisdom
+        charisma
+        level
+        weapons
       }
     }
   }

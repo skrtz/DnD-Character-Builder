@@ -19,6 +19,7 @@ const CharForm = () => {
     alignment: "",
     weapons: "",
   });
+  
 
   const [addChar] = useMutation(ADD_CHAR);
 
@@ -46,8 +47,8 @@ const CharForm = () => {
   return (
     <Form onSubmit={handleFormSubmit} id="charForm">
       <Form.Group className="mb-3" controlId="charName">
-        <Form.Label>Enter Name</Form.Label>
-        <p>
+        <Form.Label id="formTitle">Enter Name</Form.Label>
+        <p id="text">
           Before choosing a name for your character take a second to think about
           the kind of adventurer you want to play. You might be a courageous
           fighter, a skulking rogue, a fervent cleric, or a flamboyant wizard.
@@ -64,8 +65,8 @@ const CharForm = () => {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="charRace">
-        <Form.Label>Enter Race</Form.Label>
-        <p>
+        <Form.Label id="formTitle">Enter Race</Form.Label>
+        <p id="text">
           Every character belongs to a race, one of the many intelligent
           humanoid species in the D&D world. The most common player character
           races are dwarves, elves, halflings, and humans. The race you choose
@@ -82,8 +83,8 @@ const CharForm = () => {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="charClass">
-        <Form.Label>Enter Class</Form.Label>
-        <p>
+        <Form.Label id="formTitle">Enter Class</Form.Label>
+        <p id="text">
           Every adventurer is a member of a class. Class broadly describes the
           character's vocation, what special talents they possess, and the
           tactics they are most likely to employ when exploring a dungeon,
@@ -99,8 +100,8 @@ const CharForm = () => {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="charAbilities">
-        <Form.Label>Enter Ability Scores</Form.Label>
-        <p>
+        <Form.Label id="formTitle">Enter Ability Scores</Form.Label>
+        <p id="text">
           Much of what your character does in the game depends on their six
           abilities. Each ability has a score, which is the number you will
           record on your character form. You may use the roll dice feature of
@@ -155,8 +156,8 @@ const CharForm = () => {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="charBackground">
-        <Form.Label>Enter Character Background</Form.Label>
-        <p>
+        <Form.Label id="formTitle">Enter Character Background</Form.Label>
+        <p id="text">
           Your character's background describes where they come from, their
           original occupation, and your character's place in the D&D world. Talk
           with your Dungeon Master while building your background and they will
@@ -173,8 +174,8 @@ const CharForm = () => {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="charAlignment">
-        <Form.Label>Enter Alignment</Form.Label>
-        <p>
+        <Form.Label id="formTitle">Enter Alignment</Form.Label>
+        <p id="text">
           A character's alignment is the moral compass that guides their
           decisions throughout the game. Some examples of this are: Neutral
           Good, Chaotic Evil, True Neutral.
@@ -189,8 +190,8 @@ const CharForm = () => {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="charItems">
-        <Form.Label>Enter Items</Form.Label>
-        <p>
+        <Form.Label id="formTitle">Enter Items</Form.Label>
+        <p id="text">
           Your class and background will generally determine your equipment. The
           Dungeon Master may also have some campaign specific items that you
           will pick up at the beginning of the game. Fill this section in with
@@ -206,8 +207,8 @@ const CharForm = () => {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="charWeapons">
-        <Form.Label>Enter Weapons</Form.Label>
-        <p>List the weapons that your character carries on them here.</p>
+        <Form.Label id="formTitle">Enter Weapons</Form.Label>
+        <p id="text">List the weapons that your character carries on them here.</p>
         <Form.Control
           type="text"
           placeholder="Enter Weapons"
@@ -218,8 +219,8 @@ const CharForm = () => {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="charHP">
-        <Form.Label>Enter HitPoints</Form.Label>
-        <p>
+        <Form.Label id="formTitle">Enter HitPoints</Form.Label>
+        <p id="text">
           The hit points you have at the beginning of the game are dependant on
           your class. Enter those hit points here. Don't worry about it being a
           low number, you will gain hit points as you level up and become a
@@ -235,8 +236,8 @@ const CharForm = () => {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="charLevel">
-        <Form.Label>Enter Level</Form.Label>
-        <p>
+        <Form.Label id="formTitle">Enter Level</Form.Label>
+        <p id="text">
             Unless stated otherwise by your Dungeon Master every new character starts at a level 1. Input that number here.
         </p>
         <Form.Control

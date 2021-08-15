@@ -1,5 +1,6 @@
 #cardBody {
     border: solid;
+    border-color: white;
 }
 
 #background-image {
@@ -14,7 +15,13 @@
     
 }
 
+#formTitle {
+    font-family: fantasy;
+}
 
+#text {
+    font-size: 14px;
+}
 /* Header css */
 
 #header {
@@ -52,4 +59,8 @@ header p {
 #buttonLayout {
     display: flex;
     flex-direction: row;
+}
+
+.ul {
+    padding: 0px;
 }
