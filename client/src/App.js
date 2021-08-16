@@ -61,9 +61,8 @@ function App() {
               <Route exact path="/CreateChar">
               <CreateChar />
             </Route>
-            <Route exact path="/updateChar">
-              <UpdateChar component = { UpdateChar }/>
-            </Route>
+            <Route exact path="/updateChar" component = { UpdateChar }/>
+            
             </div>
           </div>
         </Switch>

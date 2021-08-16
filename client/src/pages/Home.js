@@ -12,7 +12,14 @@ const Home = () => {
 
   return (
     <main>
-      <h2>
+      <div>
+        {loading ? (
+          <div>Loading...</div>
+        ) : (
+          <Characters characters={characters} />
+        )}
+      </div>
+      <h2 id="homeTitle">
         Dungeons and Dragons is a popular role playing game that has been around
         since 1974. The game involves role playing as fantastical characters
         with a group of friends and going on imaginary adventures. There are many apects
@@ -22,13 +29,6 @@ const Home = () => {
         we've simplified and streamlined the operation so that you can get to
         playing you first D&D campaign even faster. Good luck!{" "}
       </h2>
-      <div>
-        {loading ? (
-          <div>Loading...</div>
-        ) : (
-          <Characters characters={characters} />
-        )}
-      </div>
     </main>
   );
 };

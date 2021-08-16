@@ -142,6 +142,7 @@ const resolvers = {
             background: characterInput.background,
             alignment: characterInput.alignment,
             weapons: characterInput.weapons,
+            items: characterInput.items
           },
           { new: true }
         );
