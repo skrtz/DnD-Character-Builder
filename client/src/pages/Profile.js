@@ -1,20 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Redirect, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-
 import Characters from '../components/CharacterList/Characters';
-
-import { QUERY_USER_CHAR, QUERY_ME } from '../utils/queries';
-
+import UpdateChar from '../components/UpdateChar';
 import Auth from '../utils/auth';
+import { QUERY_USER_CHAR, QUERY_ME } from '../utils/queries';
 
 const Profile = () => {
   const { username: userParam } = useParams();
-
   const { loading, data } = useQuery(userParam ? QUERY_USER_CHAR : QUERY_ME, {
     variables: { username: userParam },
   });
-  console.log(data);
+
 
   const user = data?.me || data?.user || {};
   // redirect to personal profile page if username is yours
@@ -25,7 +22,6 @@ const Profile = () => {
   if (loading) {
     return <div>Loading...</div>;
   }
-
   if (!user?.username) {
     return (
       <h4>

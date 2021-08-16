@@ -133,7 +133,16 @@ const resolvers = {
             race: characterInput.race,
             image: characterInput.image,
             class: characterInput.class,
+            strength: characterInput.strength,
+            dexterity: characterInput.dexterity,
+            constitution: characterInput.constitution,
+            intelligence: characterInput.intelligence,
+            wisdom: characterInput.wisdom,
+            charisma:characterInput.charisma,
             background: characterInput.background,
+            alignment: characterInput.alignment,
+            weapons: characterInput.weapons,
+            items: characterInput.items
           },
           { new: true }
         );
