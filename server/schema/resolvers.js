@@ -136,7 +136,7 @@ const resolvers = {
             strength: characterInput.strength,
             dexterity: characterInput.dexterity,
             constitution: characterInput.constitution,
-            intelligence: character.intelligence,
+            intelligence: characterInput.intelligence,
             wisdom: characterInput.wisdom,
             charisma:characterInput.charisma,
             background: characterInput.background,

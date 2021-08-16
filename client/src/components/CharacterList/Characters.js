@@ -85,8 +85,16 @@ const logThis = (data)=>{
                     </ListGroupItem>
                   </ListGroup>
                   <Card.Body>
-                    <Button href="#">Edit</Button>
-                    <Button
+                  <Link to = {{
+                    pathname:"/updateChar", 
+                    propsData: character._id
+                    
+                  }}>
+                    <Button>
+                      Edit
+                    </Button>
+                  </Link>                    
+                  <Button
                       href="#"
                       onClick={() => handleRemoveChar(character._id)}
                     >

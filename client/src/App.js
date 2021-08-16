@@ -62,7 +62,7 @@ function App() {
               <CreateChar />
             </Route>
             <Route exact path="/updateChar">
-              <UpdateChar />
+              <UpdateChar component = { UpdateChar }/>
             </Route>
             </div>
           </div>

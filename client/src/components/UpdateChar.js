@@ -3,8 +3,8 @@ import { Form } from "react-bootstrap";
 import { useMutation } from "@apollo/client";
 import { UPDATE_CHAR } from "../utils/mutations";
 
-const UpdateChar = () => {
-
+const UpdateChar = ({character}) => {
+    console.log(character)
     const [formState, setFormState] = useState({
         name: "",
         race: "",
@@ -29,7 +29,10 @@ const UpdateChar = () => {
         // It is important that the object fields are match the defined parameters in `ADD_CHAR` mutation
         try {
           const { data } = updateChar({
-            variables: { characterInput: formState },
+            variables: { 
+              characterId: character,
+              characterInput: formState 
+            },
           });
           // don't do this...
           // window.location.reload();
