@@ -24,7 +24,7 @@ const UpdateChar = (props) => {
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-        console.log(formState);
+      
         // On form submit, perform mutation and pass in form data object as arguments
         // It is important that the object fields are match the defined parameters in `ADD_CHAR` mutation
         try {
@@ -46,7 +46,6 @@ const UpdateChar = (props) => {
         setFormState({ ...formState, [name]: value });
       };
 
-      console.log("This is props from location", props.location.propsData)
   return (
     <Form onSubmit={handleFormSubmit} id="charForm">
       <Form.Group className="mb-3" controlId="charName">
