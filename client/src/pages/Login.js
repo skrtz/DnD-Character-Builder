@@ -10,7 +10,7 @@ const Login = () => {
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
   const [login, { error, data }] = useMutation(LOGIN_USER);
-  console.log(data);
+ 
   // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -24,7 +24,7 @@ const Login = () => {
   // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
+    
 
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
@@ -35,7 +35,7 @@ const Login = () => {
       const { data } = await login({
         variables: { ...formState },
       });
-      console.log(data.login.token);
+     
       Auth.login(data.login.token);
     } catch (e) {
       console.error(e);

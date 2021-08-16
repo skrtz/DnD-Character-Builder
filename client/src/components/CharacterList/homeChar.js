@@ -7,7 +7,7 @@ const homeChar = ({ characters }) => {
       return <h3>No characters yet</h3>;
   
     }
-    console.log()
+   
     return (
       <div id="characterCards">
         <Row>

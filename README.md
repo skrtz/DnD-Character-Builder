@@ -21,7 +21,7 @@ This application is a fullstack MERN build. Meaning we used *Mongoose*, *Express
 
 
 ## Usage
-[Deployed Site](https://team-7-meal-buddy.herokuapp.com/)
+[Deployed Site]()
 
 ## Credits
 #### Collaborators
@@ -47,10 +47,6 @@ This application is a fullstack MERN build. Meaning we used *Mongoose*, *Express
 - Repository
 
 ![Repositiory QR Code](qr/repositoryqr.png)
-
-#### Walkthrough Video
-
-[Walkthrough](https://drive.google.com/file/d/1P0liV-ge2uiISZXQ1fj9cAYUPYlscTOh/view)
 
 
 ## License

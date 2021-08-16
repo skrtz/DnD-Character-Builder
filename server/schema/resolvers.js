@@ -24,7 +24,7 @@ const resolvers = {
         const character = await Character.findById({
           _id: characterId,
         });
-        console.log(character);
+        
         return character;
       }
       throw console.error("No character by this name");
@@ -35,7 +35,7 @@ const resolvers = {
         const userData = await User.findOne({ _id: context.user._id })
           .populate("characters")
           .exec();
-        console.log("Inside userCharacters", userData);
+        
 
         return userData.characters;
       }
@@ -43,7 +43,7 @@ const resolvers = {
 
     getAllCharacters: async (parent, {}, context) => {
       const allCharacters = await Character.find();
-      console.log(allCharacters);
+      
       return allCharacters;
     },
   },
@@ -73,8 +73,7 @@ const resolvers = {
     },
 
     addCharacter: async (parent, { characterInput }, context) => {
-      console.log(characterInput);
-      console.log('hello');
+      
       // const updatedCharacter = await Character.findByIdAndUpdate(
       //   { _id: newCharacter._id },
       //   { $push: { user: context.user._id } },
@@ -94,17 +93,17 @@ const resolvers = {
         )
           .populate("characters")
           .exec();
-        // console.log("before return", updatedUser, newCharacter);
+        ;
         return updatedUser;
       }
       throw new AuthenticationError("You need to be logged in");
     },
 
     deleteCharacter: async (parent, { characterId }, context) => {
-      console.log(characterId);
+      
 
       if (context.user) {
-        console.log(context.user);
+        
         const updatedUser = await User.findByIdAndUpdate(
           { _id: context.user._id },
           { $pull: { characters: characterId } },
@@ -114,7 +113,7 @@ const resolvers = {
         const character = await Character.findOneAndDelete({
           _id: characterId,
         });
-        console.log(updatedUser.characters);
+        
         return updatedUser;
       }
     },
@@ -125,7 +124,7 @@ const resolvers = {
       context
     ) => {
       if (context.user) {
-        console.log(characterInput);
+       
         const updatedCharacter = await Character.findByIdAndUpdate(
           { _id: characterId },
           {
@@ -147,7 +146,7 @@ const resolvers = {
           { new: true }
         );
 
-        console.log(updatedCharacter);
+        
       }
     },
   },
