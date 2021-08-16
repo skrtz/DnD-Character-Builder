@@ -7,6 +7,7 @@ const CharForm = () => {
 
   const [formState, setFormState] = useState({
     name: "",
+    image: "",
     race: "",
     class: "",
     strength: "",
@@ -46,7 +47,7 @@ const CharForm = () => {
 
   return (
     <Form onSubmit={handleFormSubmit} id="charForm">
-      <Form.Group className="mb-3" controlId="charName">
+      <Form.Group className="mb-4" controlId="charName">
         <Form.Label id="formTitle">Enter Name</Form.Label>
         <p id="text">
           Before choosing a name for your character take a second to think about
@@ -60,6 +61,17 @@ const CharForm = () => {
           placeholder="Enter Name"
           name="name"
           value={formState.name}
+          onChange={handleChange}
+        />
+      </Form.Group>
+
+      <Form.Group className="mb-4" controlId="charName">
+        <Form.Label id="formTitle">Enter Character Image</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="Must end with .jpg or .png"
+          name="image"
+          value={formState.image}
           onChange={handleChange}
         />
       </Form.Group>
