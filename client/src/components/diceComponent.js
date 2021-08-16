@@ -24,7 +24,7 @@
 
 //     const roll = new DiceRoll("4d6dl1");
     
-//     console.log(roll.output)
+
 
 //     return roll.output
     

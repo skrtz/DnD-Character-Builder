@@ -19,7 +19,7 @@ const Character = ({ characters }) => {
   const { loading, data } = useQuery(QUERY_ME);
 
   const logThis = (data) => {
-    console.log(data);
+    
   };
 
   // const handleUpdateChar = async (characterId) => {
@@ -35,7 +35,7 @@ const Character = ({ characters }) => {
   // }
 
   const userData = data;
-  console.log(userData);
+ 
 
   const handleRemoveChar = async (characterId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
@@ -54,7 +54,7 @@ const Character = ({ characters }) => {
   if (!characters.length) {
     return <h3>No characters yet</h3>;
   }
-  console.log();
+ 
 
   return (
     <div id="characterCards">
