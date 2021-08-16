@@ -64,3 +64,14 @@ header p {
 .ul {
     padding: 0px;
 }
+
+#homeTitle {
+    color: white;
+    font-size: x-large;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+img {
+    max-height: 100px;
+}
