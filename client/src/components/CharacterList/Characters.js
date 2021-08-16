@@ -96,15 +96,15 @@ const Character = ({ characters }) => {
                   </ListGroupItem>
                 </ListGroup>
                 <Card.Body>
-                  <Link to = {{
-                    pathname:"/updateChar", 
-                    propsData: character
+//                   <Link to = {{
+//                     pathname:"/updateChar", 
+//                     propsData: character
                     
-                  }}>
-                    <Button>
-                      Edit
-                    </Button>
-                  </Link>
+//                   }}>
+//                     <Button>
+//                       Edit
+//                     </Button>
+//                   </Link>
                   <Button
                     href="#"
                     onClick={() => handleRemoveChar(character._id)}
