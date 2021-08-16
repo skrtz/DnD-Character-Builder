@@ -4,47 +4,47 @@ import { useMutation } from "@apollo/client";
 import { UPDATE_CHAR } from "../utils/mutations";
 
 const UpdateChar = (props) => {
+  const [formState, setFormState] = useState({
+    name: props.location.propsData.name,
+    race: props.location.propsData.race,
+    class: props.location.propsData.class,
+    strength: props.location.propsData.strength,
+    dexterity: props.location.propsData.dexterity,
+    constitution: props.location.propsData.constitution,
+    intelligence: props.location.propsData.intelligence,
+    wisdom: props.location.propsData.wisdom,
+    charisma: props.location.propsData.charisma,
+    background: props.location.propsData.background,
+    alignment: props.location.propsData.alignment,
+    weapons: props.location.propsData.weapons,
+    image: props.location.propsData.image
+  });
+  console.log(props.location.propsData);
+  const [updateChar] = useMutation(UPDATE_CHAR);
 
-    const [formState, setFormState] = useState({
-        name: props.location.propsData.name !== undefined ? props.location.propsData.name: "",
-        race: props.location.propsData.race !== undefined ? props.location.propsData.race: "",
-        class: "",
-        strength: "",
-        dexterity: "",
-        constitution: "",
-        intelligence: "",
-        wisdom: "",
-        charisma: "",
-        background: "",
-        alignment: "",
-        weapons: "",
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    // On form submit, perform mutation and pass in form data object as arguments
+    // It is important that the object fields are match the defined parameters in `ADD_CHAR` mutation
+    try {
+      const { data } = updateChar({
+        variables: {
+          characterId: props.location.propsData._id,
+          characterInput: formState,
+        },
       });
-    
-      const [updateChar] = useMutation(UPDATE_CHAR);
+      // don't do this...
+      // window.location.reload();
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
-    const handleFormSubmit = async (event) => {
-        event.preventDefault();
-      
-        // On form submit, perform mutation and pass in form data object as arguments
-        // It is important that the object fields are match the defined parameters in `ADD_CHAR` mutation
-        try {
-          const { data } = updateChar({
-            variables: { 
-              characterId: props.location.propsData._id,
-              characterInput: formState
-             },
-          });
-          // don't do this...
-          // window.location.reload();
-        } catch (err) {
-          console.error(err);
-        }
-      };
-
-      const handleChange = (event) => {
-        const { name, value } = event.target;
-        setFormState({ ...formState, [name]: value });
-      };
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({ ...formState, [name]: value });
+  };
 
   return (
     <Form onSubmit={handleFormSubmit} id="charForm">
@@ -61,7 +61,18 @@ const UpdateChar = (props) => {
           type="text"
           placeholder="Enter Name"
           name="name"
-          value={props.location.propsData.name}
+          value={formState.name}
+          onChange={handleChange}
+        />
+      </Form.Group>
+
+      <Form.Group className="mb-4" controlId="charName">
+        <Form.Label >Enter Character Image</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="Must end with .jpg or .png"
+          name="image"
+          value={formState.image}
           onChange={handleChange}
         />
       </Form.Group>
@@ -79,7 +90,7 @@ const UpdateChar = (props) => {
           type="text"
           placeholder="Enter Race"
           name="race"
-          value={props.location.propsData.race}
+          value={formState.race}
           onChange={handleChange}
         />
       </Form.Group>
@@ -96,7 +107,7 @@ const UpdateChar = (props) => {
           type="text"
           placeholder="Enter Class"
           name="class"
-          value={props.location.propsData.class}
+          value={formState.class}
           onChange={handleChange}
         />
       </Form.Group>
@@ -117,42 +128,42 @@ const UpdateChar = (props) => {
           type="number"
           placeholder="Strength Score"
           name="strength"
-          value={props.location.propsData.strength}
+          value={formState.strength}
           onChange={handleChange}
         />
         <Form.Control
           type="number"
           placeholder="Dexterity Score"
           name="dexterity"
-          value={props.location.propsData.dexterity}
+          value={formState.dexterity}
           onChange={handleChange}
         />
         <Form.Control
           type="number"
           placeholder="Constitution Score"
           name="constitution"
-          value={props.location.propsData.constitution}
+          value={formState.constitution}
           onChange={handleChange}
         />
         <Form.Control
           type="number"
           placeholder="Intelligence Score"
           name="intelligence"
-          value={props.location.propsData.intelligence}
+          value={formState.intelligence}
           onChange={handleChange}
         />
         <Form.Control
           type="number"
           placeholder="Wisdom Score"
           name="wisdom"
-          value={props.location.propsData.wisdom}
+          value={formState.wisdom}
           onChange={handleChange}
         />
         <Form.Control
           type="number"
           placeholder="Charisma Score"
           name="charisma"
-          value={props.location.propsData.charisma}
+          value={formState.charisma}
           onChange={handleChange}
         />
       </Form.Group>
@@ -169,7 +180,7 @@ const UpdateChar = (props) => {
         <Form.Control
           type="text"
           placeholder="Enter Background"
-          value={props.location.propsData.background}
+          value={formState.background}
           name="background"
           onChange={handleChange}
         />
@@ -186,7 +197,7 @@ const UpdateChar = (props) => {
           type="text"
           placeholder="Enter Alignment"
           name="alignment"
-          value={props.location.propsData.alignment}
+          value={formState.alignment}
           onChange={handleChange}
         />
       </Form.Group>
@@ -203,7 +214,7 @@ const UpdateChar = (props) => {
           type="text"
           placeholder="Enter Items"
           name="items"
-          value={props.location.propsData.items}
+          value={formState.items}
           onChange={handleChange}
         />
       </Form.Group>
@@ -215,7 +226,7 @@ const UpdateChar = (props) => {
           type="text"
           placeholder="Enter Weapons"
           name="weapons"
-          value={props.location.propsData.weapons}
+          value={formState.weapons}
           onChange={handleChange}
         />
       </Form.Group>
@@ -232,7 +243,7 @@ const UpdateChar = (props) => {
           type="number"
           placeholder="Enter HP"
           name="hitPoints"
-          value={props.location.propsData.hitPoints}
+          value={formState.hitPoints}
           onChange={handleChange}
         />
       </Form.Group>
@@ -240,13 +251,14 @@ const UpdateChar = (props) => {
       <Form.Group className="mb-3" controlId="charLevel">
         <Form.Label>Enter Level</Form.Label>
         <p>
-            Unless stated otherwise by your Dungeon Master every new character starts at a level 1. Input that number here.
+          Unless stated otherwise by your Dungeon Master every new character
+          starts at a level 1. Input that number here.
         </p>
         <Form.Control
           type="number"
           placeholder="Enter Level"
           name="level"
-          value={props.location.propsData.level}
+          value={formState.level}
           onChange={handleChange}
         />
       </Form.Group>

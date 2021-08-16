@@ -10,7 +10,9 @@ This application is a fullstack MERN build. Meaning we used *Mongoose*, *Express
 
 ## Learning Obstacles
 
+Graphql and React are highly challenging and complex frameworks.
 
+Getting the update character mutation to work has been chellenging in the front end.
 
 
 ## Table of Contents
@@ -42,11 +44,15 @@ This application is a fullstack MERN build. Meaning we used *Mongoose*, *Express
 #### QR Codes
 -  Deployed Application
 
-![Deployed QR Code](qr/deployedqr.png)
+![Deployed QR Code]()
 
 - Repository
 
-![Repositiory QR Code](qr/repositoryqr.png)
+![Repositiory QR Code]()
+
+#### Walkthrough Video
+
+[Walkthrough](https://drive.google.com/file/d/1EmrPgJchC7L-COl1nmdPKk-NHLPlStwR/view)
 
 
 ## License

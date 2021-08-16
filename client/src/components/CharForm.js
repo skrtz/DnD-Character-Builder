@@ -116,9 +116,7 @@ const CharForm = () => {
         <p id="text">
           Much of what your character does in the game depends on their six
           abilities. Each ability has a score, which is the number you will
-          record on your character form. You may use the roll dice feature of
-          this app to generate the six numbers you need to input into your
-          character sheet. You may switch around the numbers after filling it
+          record on your character form. You may switch around the numbers after filling it
           out a first time. If you are uncomfortable with randomly generating
           these scores you can use the following scores instead:
           15,14,13,12,10,8
