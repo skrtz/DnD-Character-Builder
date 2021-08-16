@@ -6,8 +6,8 @@ import { UPDATE_CHAR } from "../utils/mutations";
 const UpdateChar = (props) => {
 
     const [formState, setFormState] = useState({
-        name: props.location.propsData.name !== undefined ? props.location.propsData.name: "",
-        race: props.location.propsData.race !== undefined ? props.location.propsData.race: "",
+        name: "",
+        race: "",
         class: "",
         strength: "",
         dexterity: "",
@@ -62,7 +62,7 @@ const UpdateChar = (props) => {
           type="text"
           placeholder="Enter Name"
           name="name"
-          value={props.location.propsData.name}
+          value={formState.name}
           onChange={handleChange}
         />
       </Form.Group>
@@ -80,7 +80,7 @@ const UpdateChar = (props) => {
           type="text"
           placeholder="Enter Race"
           name="race"
-          value={props.location.propsData.race}
+          value={formState.race}
           onChange={handleChange}
         />
       </Form.Group>
@@ -97,7 +97,7 @@ const UpdateChar = (props) => {
           type="text"
           placeholder="Enter Class"
           name="class"
-          value={props.location.propsData.class}
+          value={formState.class}
           onChange={handleChange}
         />
       </Form.Group>
@@ -118,42 +118,42 @@ const UpdateChar = (props) => {
           type="number"
           placeholder="Strength Score"
           name="strength"
-          value={props.location.propsData.strength}
+          value={formState.strength}
           onChange={handleChange}
         />
         <Form.Control
           type="number"
           placeholder="Dexterity Score"
           name="dexterity"
-          value={props.location.propsData.dexterity}
+          value={formState.dexterity}
           onChange={handleChange}
         />
         <Form.Control
           type="number"
           placeholder="Constitution Score"
           name="constitution"
-          value={props.location.propsData.constitution}
+          value={formState.constitution}
           onChange={handleChange}
         />
         <Form.Control
           type="number"
           placeholder="Intelligence Score"
           name="intelligence"
-          value={props.location.propsData.intelligence}
+          value={formState.intelligence}
           onChange={handleChange}
         />
         <Form.Control
           type="number"
           placeholder="Wisdom Score"
           name="wisdom"
-          value={props.location.propsData.wisdom}
+          value={formState.wisdom}
           onChange={handleChange}
         />
         <Form.Control
           type="number"
           placeholder="Charisma Score"
           name="charisma"
-          value={props.location.propsData.charisma}
+          value={formState.charisma}
           onChange={handleChange}
         />
       </Form.Group>
@@ -170,7 +170,7 @@ const UpdateChar = (props) => {
         <Form.Control
           type="text"
           placeholder="Enter Background"
-          value={props.location.propsData.background}
+          value={formState.background}
           name="background"
           onChange={handleChange}
         />
@@ -187,7 +187,7 @@ const UpdateChar = (props) => {
           type="text"
           placeholder="Enter Alignment"
           name="alignment"
-          value={props.location.propsData.alignment}
+          value={formState.alignment}
           onChange={handleChange}
         />
       </Form.Group>
@@ -204,7 +204,7 @@ const UpdateChar = (props) => {
           type="text"
           placeholder="Enter Items"
           name="items"
-          value={props.location.propsData.items}
+          value={formState.items}
           onChange={handleChange}
         />
       </Form.Group>
@@ -216,7 +216,7 @@ const UpdateChar = (props) => {
           type="text"
           placeholder="Enter Weapons"
           name="weapons"
-          value={props.location.propsData.weapons}
+          value={formState.weapons}
           onChange={handleChange}
         />
       </Form.Group>
@@ -233,7 +233,7 @@ const UpdateChar = (props) => {
           type="number"
           placeholder="Enter HP"
           name="hitPoints"
-          value={props.location.propsData.hitPoints}
+          value={formState.hitPoints}
           onChange={handleChange}
         />
       </Form.Group>
@@ -247,7 +247,7 @@ const UpdateChar = (props) => {
           type="number"
           placeholder="Enter Level"
           name="level"
-          value={props.location.propsData.level}
+          value={formState.level}
           onChange={handleChange}
         />
       </Form.Group>

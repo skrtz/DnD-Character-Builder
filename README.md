@@ -21,7 +21,7 @@ This application is a fullstack MERN build. Meaning we used *Mongoose*, *Express
 
 
 ## Usage
-[Deployed Site](https://team-7-meal-buddy.herokuapp.com/)
+[Deployed Site](https://dnd-character-create.herokuapp.com/)
 
 ## Credits
 #### Collaborators
