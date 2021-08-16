@@ -96,13 +96,13 @@ const Character = ({ characters }) => {
                   </ListGroupItem>
                 </ListGroup>
                 <Card.Body>
-                  {/* <Link to = {{
-                    pathname:"/updateChar", 
+              {/* <Link to = {{
+                   pathname:"/updateChar", 
                     propsData: character
                     
-                  }}>
-                    <Button>
-                      Edit
+                 }}>
+                   <Button>
+                     Edit
                     </Button>
                   </Link> */}
                   <Button
