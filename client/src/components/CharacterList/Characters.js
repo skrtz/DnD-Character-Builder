@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import {
   Card,
   ListGroupItem,
@@ -16,11 +17,16 @@ const Character = ({ characters }) => {
   const [removeChar] = useMutation(DELETE_CHAR);
   const { loading, data } = useQuery(QUERY_ME);
 
+const logThis = (data)=>{
+  console.log(data);
+}
+
+
   const userData = data
   console.log(userData)
 
   const handleRemoveChar = async (characterId) => {
-    
+
     const token = Auth.loggedIn() ? Auth.getToken() : null;
     if (!token) {
       return false;
@@ -37,7 +43,6 @@ const Character = ({ characters }) => {
   if (!characters.length) {
     return <h3>No characters yet</h3>;
   }
-  console.log();
   return (
     <div id="characterCards">
       <Row>
@@ -56,7 +61,7 @@ const Character = ({ characters }) => {
                   <ListGroupItem>Vestibulum at eros</ListGroupItem>
                 </ListGroup>
                 <Card.Body>
-                  <Button href="#">Edit</Button>
+                    <Button onClick={() => logThis(character._id)}>Edit</Button>
                   <Button
                     href="#"
                     onClick={() => handleRemoveChar(character._id)}

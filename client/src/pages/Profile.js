@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import { Redirect, useParams } from 'react-router-dom';
-import { useQuery, useMutation } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import Characters from '../components/CharacterList/Characters';
+import UpdateChar from '../components/UpdateChar';
 import Auth from '../utils/auth';
 import { QUERY_USER_CHAR, QUERY_ME } from '../utils/queries';
-import { DELETE_CHAR } from '../utils/mutations';
 
 const Profile = () => {
   const { username: userParam } = useParams();
@@ -12,26 +12,6 @@ const Profile = () => {
     variables: { username: userParam },
   });
 
-  const [deleteMe, setDeleteMe] = useState({
-    characterId: 'ID'
-  });
-  const [deleteChar, {error}] = useMutation(DELETE_CHAR);
-
-  const handleDelete = async (e) => {
-    console.log(e);
-    const removeThis = e.target.getAttribute('characters');
-    try{
-      const { data } = await deleteChar({
-        variables: { deleteMe }
-      });
-    } catch (err) {
-      console.error(err);
-    }
-    // setRemoveChar({
-    //   characterId: 'ID',
-    // });
-
-  };
 
   const user = data?.me || data?.user || {};
   // redirect to personal profile page if username is yours
@@ -60,7 +40,6 @@ const Profile = () => {
         <div className="col-12 mb-5">
           <Characters
             characters={user.characters}
-            onClick={handleDelete}
           />
         </div>
       </div>

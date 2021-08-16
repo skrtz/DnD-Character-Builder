@@ -13,32 +13,32 @@
 
 // const DiceComponent = () => {
   
-  const [diceRoll, setDiceRoll] = useState({
-    diceRoll:'',
-  })
+//   const [diceRoll, setDiceRoll] = useState({
+//     diceRoll:'',
+//   })
   
 
-  const rollDice = async (event) => {
-    // event.preventDefault();
+//   const rollDice = async (event) => {
+//     // event.preventDefault();
 
-    const roll = await new DiceRoll("4d6dl1");
+//     const roll = await new DiceRoll("4d6dl1");
     
 
 
-    setDiceRoll(diceRoll, roll.output)
-    console.log(roll.output)
+//     setDiceRoll(diceRoll, roll.output)
+//     console.log(roll.output)
     
-  };
+//   };
 
  
-  return (
-    <div>
-      <p>You rolled {diceRoll}  </p>
-      <button onClick={rollDice}>
-        Roll Dice!
-      </button>
-    </div>
-  );
-}
+//   return (
+//     <div>
+//       <p>You rolled {diceRoll}  </p>
+//       <button onClick={rollDice}>
+//         Roll Dice!
+//       </button>
+//     </div>
+//   );
+// }
 
-export default DiceComponent
+// export default DiceComponent

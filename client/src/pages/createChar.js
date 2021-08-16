@@ -1,14 +1,15 @@
 import React from 'react';
 import CharForm from "../components/CharForm";
-import DiceComponent from '../components/diceComponent';
+import Character from '../components/CharacterList/Characters';
+// import DiceComponent from '../components/diceComponent';
 
 
 const CreateChar = () => {
 
     return (
-        <CharForm />
-        {/* <DiceComponent /> */}
-        </>
+        <div>
+            <CharForm />
+        </div>
     )
 };
 
