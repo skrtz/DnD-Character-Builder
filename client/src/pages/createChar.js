@@ -7,9 +7,9 @@ import Character from '../components/CharacterList/Characters';
 const CreateChar = () => {
 
     return (
-        <div>
-            <CharForm />
-        </div>
+        <>
+        <CharForm />
+        </>
     )
 };
 

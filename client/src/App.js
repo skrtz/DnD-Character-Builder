@@ -10,7 +10,6 @@ import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Profile from './pages/Profile';
 import CreateChar from './pages/CreateChar';
-import UpdateChar from './components/UpdateChar';
 // import diceComponent from './components/diceComponent'
 
 

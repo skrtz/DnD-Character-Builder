@@ -1,6 +1,3 @@
 # DnD-Character-Builder
-UPenn Bootcamp Project 3
 
-Dan's initial commit
-
-Steve's initial commit
+Dungeons and Dragons is a popular role playing game that has been around since 1974. The game involves role playing as fantastical characters with a group of friends and going on imaginary adventures. There are many apects to this complicated and lore driven game but the cornerstone of all campaigns is the individual characters. Creating your first character can be daunting for the first time player. That's why with this site we've simplified and streamlined the operation so that you can get to playing you first D&D campaign even faster. 

@@ -7,33 +7,37 @@
 //   Row,
 //   Form,
 // } from "react-bootstrap";
-// import { DiceRoll, exportFormats } from "rpg-dice-roller";
+// // import { DiceRoll, exportFormats } from "rpg-dice-roller";
 
 
 
 // const DiceComponent = () => {
   
 //   const [diceRoll, setDiceRoll] = useState({
-//     diceRoll:'',
-//   })
+//   diceRoll:'',
+// })
   
-
+  
+  
 //   const rollDice = async (event) => {
 //     // event.preventDefault();
 
-//     const roll = await new DiceRoll("4d6dl1");
+//     const roll = new DiceRoll("4d6dl1");
     
-
-
-//     setDiceRoll(diceRoll, roll.output)
 //     console.log(roll.output)
+
+//     return roll.output
     
 //   };
 
- 
+//   const handleChange = (event) => {
+//     const { diceRoll, userRoll } = event.target;
+//         setDiceRoll({ ...diceRoll, diceRoll: userRoll });
+//   }
+
 //   return (
 //     <div>
-//       <p>You rolled {diceRoll}  </p>
+//       <p>You rolled  </p>
 //       <button onClick={rollDice}>
 //         Roll Dice!
 //       </button>
