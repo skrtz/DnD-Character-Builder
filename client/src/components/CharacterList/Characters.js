@@ -15,12 +15,10 @@ import { QUERY_ME } from "../../utils/queries";
 
 const Character = ({ characters }) => {
   const [removeChar] = useMutation(DELETE_CHAR);
-  
+
   const { loading, data } = useQuery(QUERY_ME);
 
-  const logThis = (data) => {
-    
-  };
+  const logThis = (data) => {};
 
   // const handleUpdateChar = async (characterId) => {
   //   const token = Auth.loggedIn() ? Auth.getToken() : null;
@@ -35,7 +33,6 @@ const Character = ({ characters }) => {
   // }
 
   const userData = data;
- 
 
   const handleRemoveChar = async (characterId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
@@ -54,7 +51,6 @@ const Character = ({ characters }) => {
   if (!characters.length) {
     return <h3>No characters yet</h3>;
   }
- 
 
   return (
     <div id="characterCards">
@@ -96,6 +92,7 @@ const Character = ({ characters }) => {
                   </ListGroupItem>
                 </ListGroup>
                 <Card.Body>
+<<<<<<< HEAD
               <Link to = {{
                    pathname:"/updateChar", 
                     propsData: character
@@ -104,6 +101,15 @@ const Character = ({ characters }) => {
                    <Button>
                      Edit
                     </Button>
+=======
+                  <Link
+                    to={{
+                      pathname: "/updateChar",
+                      propsData: character,
+                    }}
+                  >
+                    <Button>Edit</Button>
+>>>>>>> 58fa96f0e6632b0e6763efa485224f4c3be0e4d9
                   </Link>
                   <Button
                     href="#"
