@@ -34,7 +34,7 @@ const CharForm = () => {
         variables: { characterInput: formState },
       });
       // don't do this...
-      // window.location.reload();
+      window.location.reload();
     } catch (err) {
       console.error(err);
     }
