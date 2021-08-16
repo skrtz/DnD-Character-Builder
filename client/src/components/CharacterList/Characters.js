@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import {
   Card,
   ListGroupItem,
@@ -15,6 +16,11 @@ import { QUERY_ME } from "../../utils/queries";
 const Character = ({ characters }) => {
   const [removeChar] = useMutation(DELETE_CHAR);
   const { loading, data } = useQuery(QUERY_ME);
+
+const logThis = (data)=>{
+  console.log(data);
+}
+
 
   const userData = data
   console.log(userData)
