@@ -40,44 +40,6 @@ const logThis = (data)=>{
     }
   };
 
-<<<<<<< HEAD
-  if (!characters.length) {
-    return <h3>No characters yet</h3>;
-  }
-  return (
-    <div id="characterCards">
-      <Row>
-        {characters &&
-          characters.map((character) => (
-            <Col style={{ marginBottom: "20px" }}>
-              <Card key={character._id} style={{ width: "200px" }}>
-                <Card.Img variant="top" src={character.image} />
-                <Card.Body>
-                  <Card.Title>{character.name}</Card.Title>
-                  <Card.Text>{character.background}</Card.Text>
-                </Card.Body>
-                <ListGroup className="list-group-flush">
-                  <ListGroupItem>Race: {character.race}</ListGroupItem>
-                  <ListGroupItem>Class: {character.class} </ListGroupItem>
-                  <ListGroupItem>Vestibulum at eros</ListGroupItem>
-                </ListGroup>
-                <Card.Body>
-                    <Button onClick={() => logThis(character._id)}>Edit</Button>
-                  <Button
-                    href="#"
-                    onClick={() => handleRemoveChar(character._id)}
-                  >
-                    Delete
-                  </Button>
-                </Card.Body>
-              </Card>
-            </Col>
-          ))}
-      </Row>
-    </div>
-  );
-};
-=======
     if (!characters.length) {
       return <h3>No characters yet</h3>;
     }
@@ -139,6 +101,5 @@ const logThis = (data)=>{
     );
   };
 
->>>>>>> e2260b6e425c60adf4c6fb80ecfb1464267db9dd
 
   export default Character;
