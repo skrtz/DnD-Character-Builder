@@ -92,16 +92,6 @@ const Character = ({ characters }) => {
                   </ListGroupItem>
                 </ListGroup>
                 <Card.Body>
-<<<<<<< HEAD
-              <Link to = {{
-                   pathname:"/updateChar", 
-                    propsData: character
-                    
-                 }}>
-                   <Button>
-                     Edit
-                    </Button>
-=======
                   <Link
                     to={{
                       pathname: "/updateChar",
@@ -109,7 +99,6 @@ const Character = ({ characters }) => {
                     }}
                   >
                     <Button>Edit</Button>
->>>>>>> 58fa96f0e6632b0e6763efa485224f4c3be0e4d9
                   </Link>
                   <Button
                     href="#"
