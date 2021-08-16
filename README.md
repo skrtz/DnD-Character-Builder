@@ -27,7 +27,7 @@ This application is a fullstack MERN build. Meaning we used *Mongoose*, *Express
 #### Collaborators
     Dan Ringenbach 
     Stephen Kurtz
-    Olivia Moon
+    Dexter Vorbe
 
 #### Npm Packages Used
 

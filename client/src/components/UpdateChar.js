@@ -3,11 +3,11 @@ import { Form } from "react-bootstrap";
 import { useMutation } from "@apollo/client";
 import { UPDATE_CHAR } from "../utils/mutations";
 
-const UpdateChar = () => {
+const UpdateChar = (props) => {
 
     const [formState, setFormState] = useState({
-        name: "",
-        race: "",
+        name: props.location.propsData.name !== undefined ? props.location.propsData.name: "",
+        race: props.location.propsData.race !== undefined ? props.location.propsData.race: "",
         class: "",
         strength: "",
         dexterity: "",
@@ -29,7 +29,10 @@ const UpdateChar = () => {
         // It is important that the object fields are match the defined parameters in `ADD_CHAR` mutation
         try {
           const { data } = updateChar({
-            variables: { characterInput: formState },
+            variables: { 
+              characterId: props.location.propsData._id,
+              characterInput: formState
+             },
           });
           // don't do this...
           // window.location.reload();
@@ -43,7 +46,7 @@ const UpdateChar = () => {
         setFormState({ ...formState, [name]: value });
       };
 
-
+      console.log("This is props from location", props.location.propsData)
   return (
     <Form onSubmit={handleFormSubmit} id="charForm">
       <Form.Group className="mb-3" controlId="charName">
@@ -52,14 +55,14 @@ const UpdateChar = () => {
           Before choosing a name for your character take a second to think about
           the kind of adventurer you want to play. You might be a courageous
           fighter, a skulking rogue, a fervent cleric, or a flamboyant wizard.
-          Pick a name that will exemplify and amplify theindividual feature of
+          Pick a name that will exemplify and amplify the individual feature of
           you fantastic persona.
         </p>
         <Form.Control
           type="text"
           placeholder="Enter Name"
           name="name"
-          value={formState.name}
+          value={props.location.propsData.name}
           onChange={handleChange}
         />
       </Form.Group>
@@ -77,7 +80,7 @@ const UpdateChar = () => {
           type="text"
           placeholder="Enter Race"
           name="race"
-          value={formState.race}
+          value={props.location.propsData.race}
           onChange={handleChange}
         />
       </Form.Group>
@@ -94,7 +97,7 @@ const UpdateChar = () => {
           type="text"
           placeholder="Enter Class"
           name="class"
-          value={formState.class}
+          value={props.location.propsData.class}
           onChange={handleChange}
         />
       </Form.Group>
@@ -115,42 +118,42 @@ const UpdateChar = () => {
           type="number"
           placeholder="Strength Score"
           name="strength"
-          value={formState.strength}
+          value={props.location.propsData.strength}
           onChange={handleChange}
         />
         <Form.Control
           type="number"
           placeholder="Dexterity Score"
           name="dexterity"
-          value={formState.dexterity}
+          value={props.location.propsData.dexterity}
           onChange={handleChange}
         />
         <Form.Control
           type="number"
           placeholder="Constitution Score"
           name="constitution"
-          value={formState.constitution}
+          value={props.location.propsData.constitution}
           onChange={handleChange}
         />
         <Form.Control
           type="number"
           placeholder="Intelligence Score"
           name="intelligence"
-          value={formState.intelligence}
+          value={props.location.propsData.intelligence}
           onChange={handleChange}
         />
         <Form.Control
           type="number"
           placeholder="Wisdom Score"
           name="wisdom"
-          value={formState.wisdom}
+          value={props.location.propsData.wisdom}
           onChange={handleChange}
         />
         <Form.Control
           type="number"
           placeholder="Charisma Score"
           name="charisma"
-          value={formState.charisma}
+          value={props.location.propsData.charisma}
           onChange={handleChange}
         />
       </Form.Group>
@@ -167,7 +170,7 @@ const UpdateChar = () => {
         <Form.Control
           type="text"
           placeholder="Enter Background"
-          value={formState.background}
+          value={props.location.propsData.background}
           name="background"
           onChange={handleChange}
         />
@@ -184,7 +187,7 @@ const UpdateChar = () => {
           type="text"
           placeholder="Enter Alignment"
           name="alignment"
-          value={formState.alignment}
+          value={props.location.propsData.alignment}
           onChange={handleChange}
         />
       </Form.Group>
@@ -201,7 +204,7 @@ const UpdateChar = () => {
           type="text"
           placeholder="Enter Items"
           name="items"
-          value={formState.items}
+          value={props.location.propsData.items}
           onChange={handleChange}
         />
       </Form.Group>
@@ -213,7 +216,7 @@ const UpdateChar = () => {
           type="text"
           placeholder="Enter Weapons"
           name="weapons"
-          value={formState.weapons}
+          value={props.location.propsData.weapons}
           onChange={handleChange}
         />
       </Form.Group>
@@ -230,7 +233,7 @@ const UpdateChar = () => {
           type="number"
           placeholder="Enter HP"
           name="hitPoints"
-          value={formState.hitPoints}
+          value={props.location.propsData.hitPoints}
           onChange={handleChange}
         />
       </Form.Group>
@@ -244,7 +247,7 @@ const UpdateChar = () => {
           type="number"
           placeholder="Enter Level"
           name="level"
-          value={formState.level}
+          value={props.location.propsData.level}
           onChange={handleChange}
         />
       </Form.Group>
