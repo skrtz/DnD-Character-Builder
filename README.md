@@ -42,11 +42,11 @@ This application is a fullstack MERN build. Meaning we used *Mongoose*, *Express
 #### QR Codes
 -  Deployed Application
 
-![Deployed QR Code](qr/deployedqr.png)
+![Deployed QR Code](./client/src/components/images/repoqr.png)
 
 - Repository
 
-![Repositiory QR Code](qr/repositoryqr.png)
+![Repositiory QR Code](./client/src/components/images/deployedqr.png)
 
 
 ## License
