@@ -3,6 +3,7 @@ import { Form } from "react-bootstrap";
 import { useMutation } from "@apollo/client";
 import { UPDATE_CHAR } from "../utils/mutations";
 
+
 const UpdateChar = (props) => {
   const [formState, setFormState] = useState({
     name: props.location.propsData.name,
