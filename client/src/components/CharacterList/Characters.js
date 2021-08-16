@@ -45,7 +45,7 @@ const Character = ({ characters }) => {
             characters.map((character) => (
               <Col style={{ marginBottom: "20px" }}>
                 <Card style={{ width: '200px' }} >
-                  <Card.Img variant="top" src={character.image} />
+                  <Card.Img id="cardImage" variant="top" src={character.image} />
                   <Card.Body>
                     <Card.Title>Level: {character.level} {character.name}</Card.Title>
                     <Card.Text>
@@ -93,6 +93,5 @@ const Character = ({ characters }) => {
       </div>
     );
   };
-};
 
   export default Character;
