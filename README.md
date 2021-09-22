@@ -25,6 +25,8 @@ Getting the update character mutation to work has been chellenging in the front 
 ## Usage
 [Deployed Site](https://dnd-character-create.herokuapp.com/)
 
+![D&D Character Builder](./assets/DnD.png)
+
 ## Credits
 #### Collaborators
     Dan Ringenbach 
