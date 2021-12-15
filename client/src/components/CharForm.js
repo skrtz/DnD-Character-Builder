@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import { useMutation } from "@apollo/client";
 import { ADD_CHAR } from "../utils/mutations";
+// import DiceComponent from "./diceComponent";
 
 const CharForm = () => {
 
@@ -34,7 +35,7 @@ const CharForm = () => {
         variables: { characterInput: formState },
       });
       // don't do this...
-      window.location.reload();
+      window.location.href="/profile";
     } catch (err) {
       console.error(err);
     }

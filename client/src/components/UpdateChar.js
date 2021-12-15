@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Form } from "react-bootstrap";
 import { useMutation } from "@apollo/client";
 import { UPDATE_CHAR } from "../utils/mutations";
@@ -20,6 +20,8 @@ const UpdateChar = (props) => {
     weapons: props.location.propsData.weapons,
     image: props.location.propsData.image
   });
+
+
   console.log(props.location.propsData);
   const [updateChar] = useMutation(UPDATE_CHAR);
 
@@ -37,6 +39,7 @@ const UpdateChar = (props) => {
       });
       // don't do this...
       // window.location.reload();
+      window.location.href="./profile";
     } catch (err) {
       console.error(err);
     }
