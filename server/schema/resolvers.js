@@ -19,15 +19,28 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
 
-    character: async (parent, { characterId }, context) => {
-      if (context.user) {
-        const character = await Character.findById({
-          _id: characterId,
-        });
+    // character: async (parent, { characterId }, context) => {
+    //   if (context.user) {
+    //     const character = await Character.findById({
+    //       _id: characterId,
+    //     });
         
-        return character;
-      }
-      throw console.error("No character by this name");
+    //     return character;
+    //   }
+    //   throw console.error("No character by this name");
+      
+    //   return character;
+    // },
+
+    character: async (parent, { characterId }, context) => {
+      const character = await Character.findById({
+        _id: characterId,
+      });
+      // const character = await Character.find({
+      //   name: characterId,
+      // });
+      
+      return character;
     },
 
     userCharacters: async (parent, args, context) => {
