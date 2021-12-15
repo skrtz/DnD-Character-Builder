@@ -50,7 +50,11 @@ export const QUERY_USER_CHAR = gql`
 export const QUERY_CHAR = gql`
   query character($characterId: ID) {
     character(characterId: $characterId) {
+      name
       race
+      class
+      weapons
+      image
     }
   }
 `;
