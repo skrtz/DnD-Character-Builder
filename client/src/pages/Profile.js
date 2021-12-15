@@ -5,6 +5,7 @@ import Characters from '../components/CharacterList/Characters';
 import UpdateChar from '../components/UpdateChar';
 import Auth from '../utils/auth';
 import { QUERY_USER_CHAR, QUERY_ME } from '../utils/queries';
+// import DiceComponent from '../components/diceComponent';
 
 const Profile = () => {
   const { username: userParam } = useParams();
@@ -42,6 +43,7 @@ const Profile = () => {
             characters={user.characters}
           />
         </div>
+        {/* <DiceComponent /> */}
       </div>
     </div>
   );

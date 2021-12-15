@@ -1,48 +1,40 @@
-// import React, { useState } from "react";
-// import {
-//   Card,
-//   ListGroupItem,
-//   ListGroup,
-//   Col,
-//   Row,
-//   Form,
-// } from "react-bootstrap";
-// // import { DiceRoll, exportFormats } from "rpg-dice-roller";
+import React, { useState } from "react";
+import { DiceRoll } from "@dice-roller/rpg-dice-roller";
 
 
 
-// const DiceComponent = () => {
+const DiceComponent = () => {
   
-//   const [diceRoll, setDiceRoll] = useState({
-//   diceRoll:'',
-// })
+  const [diceRoll, setDiceRoll] = useState({
+  diceRoll:'',
+})
   
   
   
-//   const rollDice = async (event) => {
-//     // event.preventDefault();
+  const rollDice = async (event) => {
+    // event.preventDefault();
 
-//     const roll = new DiceRoll("4d6dl1");
+    const roll = new DiceRoll("4d6dl1");
     
 
-
-//     return roll.output
+    console.log(roll.output);
+    return roll.output
     
-//   };
+  };
 
-//   const handleChange = (event) => {
-//     const { diceRoll, userRoll } = event.target;
-//         setDiceRoll({ ...diceRoll, diceRoll: userRoll });
-//   }
+  const handleChange = (event) => {
+    const { diceRoll, userRoll } = event.target;
+        setDiceRoll({ ...diceRoll, diceRoll: userRoll });
+  }
 
-//   return (
-//     <div>
-//       <p>You rolled  </p>
-//       <button onClick={rollDice}>
-//         Roll Dice!
-//       </button>
-//     </div>
-//   );
-// }
+  return (
+    <div>
+      <p>You rolled  </p>
+      <button onClick={rollDice}>
+        Roll Dice!
+      </button>
+    </div>
+  );
+}
 
-// export default DiceComponent
+export default DiceComponent
