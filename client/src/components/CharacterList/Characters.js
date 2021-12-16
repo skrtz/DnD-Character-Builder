@@ -43,6 +43,7 @@ const Character = ({ characters }) => {
       await removeChar({
         variables: { characterId },
       });
+      window.location.href="/profile";
     } catch (err) {
       console.error(err);
     }

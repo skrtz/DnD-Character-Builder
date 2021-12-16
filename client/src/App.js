@@ -1,18 +1,18 @@
-import React from 'react';
+import { React, useState } from 'react';
 import { setContext } from '@apollo/client/link/context'
 import { ApolloProvider, ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Login from './pages/Login';
-import Header from './components/Header';
+import Header from './components/Header/index';
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Profile from './pages/Profile';
 import CreateChar from './pages/CreateChar';
 import UpdateChar from './components/UpdateChar';
 // import diceComponent from './components/diceComponent'
-
+// import { QUERY_CHAR } from './utils/queries';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -39,15 +39,45 @@ const client = new ApolloClient({
 });
 
 function App() {
+  const [search, setSearch] = useState('');
+  const [result, setResult] = useState('');
+  // const { loading, data } = useQuery(QUERY_CHAR);
+
+
+  // const searchCharacter = async (search) => {
+  //   setSearch(search);
+  // }
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    // searchCharacter(search);
+    // console.log(search);
+    setSearch('');
+  };
+
+  const handleInputChange = (e) => {
+    const { target } = e;
+    const inputValue = target.value;
+    setSearch(inputValue);
+    setResult(inputValue);
+  };
+  console.log(result);
+
   return (
     <ApolloProvider client={client}>
       <Router>
         <Switch>
           <div className="flex-column justify-flex-start min-100-vh">
-            <Header />
+            <Header
+              value={search}
+              handleInputChange={handleInputChange}
+              handleFormSubmit={handleFormSubmit}
+            />
             <div style={{ maxWidth: "fit-content", margin: "0 auto", minWidth: "170px" }}>
               <Route exact path="/">
-                <Home />
+                <Home
+                  value={result}
+                />
               </Route>
               <Route exact path="/login">
                 <Login />
@@ -59,10 +89,9 @@ function App() {
                 <Profile />
               </Route>
               <Route exact path="/CreateChar">
-              <CreateChar />
-            </Route>
-            <Route exact path="/updateChar" component = { UpdateChar }/>
-            
+                <CreateChar />
+              </Route>
+              <Route exact path="/updateChar" component={UpdateChar} />
             </div>
           </div>
         </Switch>
