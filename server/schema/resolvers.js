@@ -33,12 +33,12 @@ const resolvers = {
     // },
 
     character: async (parent, { characterId }, context) => {
-      const character = await Character.findById({
-        _id: characterId,
-      });
-      // const character = await Character.find({
-      //   name: characterId,
+      // const character = await Character.findById({
+      //   _id: characterId,
       // });
+      const character = await Character.findOne({
+        name: characterId,
+      });
       
       return character;
     },
